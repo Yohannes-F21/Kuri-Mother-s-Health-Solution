@@ -1,4 +1,3 @@
-import React from "react";
 import Error from "./pages/Error";
 import About from "./pages/About";
 import HomeLayout from "./pages/HomeLayout";

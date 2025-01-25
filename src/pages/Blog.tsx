@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Search, Facebook, Twitter, Share2 } from "lucide-react";
+import { useState } from "react";
+import { Search } from "lucide-react";
 import Modal from "../components/Modal";
 const sampleArticle = {
   featured: {

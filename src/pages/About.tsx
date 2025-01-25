@@ -1,4 +1,3 @@
-import React from "react";
 import { Heart, Leaf, Users, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
