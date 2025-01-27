@@ -11,13 +11,20 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-2">
-            <div className="bg-[#FFD6E0] p-2 rounded-full">
+            {/* <div className="bg-[#FFD6E0] p-2 rounded-full">
               <Heart className="h-6 w-6 text-[#2D3748]" />
+            </div> */}
+            <div className="logo ">
+              <img
+                src="https://w7.pngwing.com/pngs/297/788/png-transparent-breastfeeding-infant-mother-illustration-linear-fashion-family-portrait-painting-material-woman-breastfeeding-illustration-watercolor-painting-child-fashion-girl.png"
+                alt="logo"
+                className="w-12 h-12 rounded-full object-fill"
+              />
             </div>
-            <div className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#FFD6E0] transition-colors duration-200">
+            <div>
               <NavLink
                 to="/"
-                className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#FFD6E0] transition-colors duration-200"
+                className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#F43F5E] transition-colors duration-200"
               >
                 Kuri
               </NavLink>
