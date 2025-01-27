@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,24 +16,30 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link to="/About" className="text-gray-600 hover:text-gray-900">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link
+                  to="/our-products"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Community
-                </a>
+                <Link to="/blogs" className="text-gray-600 hover:text-gray-900">
+                  Blog
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link
+                  to="/contact-us"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -60,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-gray-600">
-          <p>&copy; 2024 Kuri Mother's Health Solution. All rights reserved.</p>
+          <p>&copy; 2025 Kuri Mother's Health Solution. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 import {
   Heart,
   Leaf,
@@ -7,71 +8,14 @@ import {
   ShoppingBag,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 const Home = () => {
   //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="w-full min-h-screen bg-[#FFFAF6]">
-      {/* <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-2">
-              <div className="bg-[#FFD6E0] p-2 rounded-full">
-                <Heart className="h-6 w-6 text-[#2D3748]" />
-              </div>
-              <div className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#FFD6E0] transition-colors duration-200">
-                Kuri
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-1">
-              {["About", "Products", "Community", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="px-4 py-2 text-gray-600 hover:text-gray-900 rounded-full hover:bg-[#FFE5D9]/50 transition-all duration-200 text-sm font-medium"
-                >
-                  {item}
-                </a>
-              ))}
-              <Button className="ml-4 bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200 shadow-sm">
-                Join Community
-              </Button>
-            </div>
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
-              >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-          </div>
-          {isMenuOpen && (
-            <div className="md:hidden pb-4 px-4">
-              <div className="flex flex-col space-y-2">
-                {["About", "Products", "Community", "Contact"].map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="px-4 py-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-[#FFE5D9]/50 transition-all duration-200"
-                  >
-                    {item}
-                  </a>
-                ))}
-                <Button className="mt-2 w-full bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200">
-                  Join Community
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav> */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFE5D9] to-[#FFFAF6]">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-5">
             <div className="flex-1 space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Welcome to Kuri Mother's Health Solution
@@ -80,15 +24,15 @@ const Home = () => {
                 The first lactation support platform in Ethiopia
               </p>
               <Button className="bg-[#2D3748] text-white hover:bg-gray-700 px-8 py-6 text-lg">
-                Explore Our Solutions
+                <Link to={"/our-products"}>Explore Our Solutions</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
             <div className="flex-1">
               <img
-                src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9"
+                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
                 alt="Mother with baby"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg "
               />
             </div>
           </div>
@@ -206,70 +150,6 @@ const Home = () => {
           </Button>
         </div>
       </section>
-      {/* <footer className="bg-white border-t">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Kuri</h3>
-              <p className="text-gray-600">
-                Ethiopia's first lactation support platform
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-gray-900">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-gray-900">
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-gray-900">
-                    Community
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-600 hover:text-gray-900">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2">
-                <li className="text-gray-600">Addis Ababa, Ethiopia</li>
-                <li className="text-gray-600">info@kurihealth.com</li>
-                <li className="text-gray-600">+251 911 123 456</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Twitter className="h-6 w-6" />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t text-center text-gray-600">
-            <p>
-              &copy; 2024 Kuri Mother's Health Solution. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   );
 };

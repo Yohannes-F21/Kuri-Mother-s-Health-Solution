@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import Modal from "../components/Modal";
+import { Link } from "react-router-dom";
 const sampleArticle = {
   featured: {
     title: "Is Breastfeeding Still the Best Choice?",
@@ -143,7 +144,7 @@ const Blog = () => {
                   </span>
                   <button
                     onClick={() => openModal(sampleArticle.regular)}
-                    className="text-[#F4C5D3] hover:text-[#E4B5C3] font-medium"
+                    className="text-[#F43F5E] hover:text-[#E4B5C3] font-medium"
                   >
                     Read More →
                   </button>
@@ -161,9 +162,11 @@ const Blog = () => {
           <p className="text-gray-600 mb-6">
             Join the Kuri Community for exclusive insights and support.
           </p>
-          <button className=" text-white px-8 py-3 rounded-full bg-[#F43F5E] hover:bg-[#E11D48] transition-colors">
-            Join Our Community
-          </button>
+          <Link to={"/contact-us"}>
+            <button className=" text-white px-8 py-3 rounded-full bg-[#F43F5E] hover:bg-[#E11D48] transition-colors">
+              Join Our Community
+            </button>
+          </Link>
         </div>
       </div>
 
