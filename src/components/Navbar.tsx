@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
 
   return (
     <nav className="fixed top-0 w-full bg-white/50 backdrop-blur-sm z-50 border-b shadow-sm">
@@ -65,22 +79,24 @@ const Navbar = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden pb-4 px-4">
+          <div ref={menuRef} className="md:hidden pb-4 px-4">
             <div className="flex flex-col space-y-2">
               {["About", "Our Products", "Blogs", "Contact Us"].map((item) => (
-                <NavLink
-                  key={item}
-                  to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className={({ isActive }) =>
-                    `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive
-                        ? "text-gray-900 bg-[#FFE5D9]/75"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-[#FFE5D9]/50"
-                    }`
-                  }
-                >
-                  {item}
-                </NavLink>
+                <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                  <NavLink
+                    key={item}
+                    to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className={({ isActive }) =>
+                      `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                        isActive
+                          ? "text-gray-900 bg-[#FFE5D9]/75"
+                          : "text-gray-600 hover:text-gray-900 hover:bg-[#FFE5D9]/50"
+                      }`
+                    }
+                  >
+                    {item}
+                  </NavLink>
+                </button>
               ))}
               <Button className="mt-2 w-full bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200">
                 Join Community
