@@ -1,5 +1,4 @@
-import React from "react";
-import { Heart, Leaf } from "lucide-react";
+import { Leaf } from "lucide-react";
 const Products = () => {
   const products = [
     {

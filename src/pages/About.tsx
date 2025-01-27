@@ -1,6 +1,6 @@
 import { Heart, Leaf, Users, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Hero from "@/components/AboutPage/hero";
+import Hero from "../components/AboutPage/hero";
 import { Link } from "react-router-dom";
 
 const features = [
