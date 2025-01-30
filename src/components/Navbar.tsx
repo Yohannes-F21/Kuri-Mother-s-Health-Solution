@@ -2,8 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import GoogleTranslate from "./GoogleTranslate";
 
 const Navbar = () => {
+  // the following code is for the google translator
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -61,9 +64,10 @@ const Navbar = () => {
               </NavLink>
             ))}
             {/* <NavLink to={''}>About</NavLink> */}
-            <Button className="ml-4 bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200 shadow-sm">
+            {/* <Button className="ml-4 bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200 shadow-sm">
               Join Community
-            </Button>
+            </Button> */}
+            <GoogleTranslate></GoogleTranslate>
           </div>
           <div className="md:hidden">
             <button
