@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import GoogleTranslate from "./GoogleTranslate";
+import logo from "../Assets/Kuri socialmedia profile 1-02.jpg";
 
 const Navbar = () => {
   // the following code is for the google translator
@@ -32,20 +33,22 @@ const Navbar = () => {
               <Heart className="h-6 w-6 text-[#2D3748]" />
             </div> */}
             <div className="logo ">
-              <img
-                src="https://w7.pngwing.com/pngs/297/788/png-transparent-breastfeeding-infant-mother-illustration-linear-fashion-family-portrait-painting-material-woman-breastfeeding-illustration-watercolor-painting-child-fashion-girl.png"
-                alt="logo"
-                className="w-12 h-12 rounded-full object-fill"
-              />
+              <NavLink to={"/"}>
+                <img
+                  src={logo}
+                  alt="Kuri Social Media Profile"
+                  className="w-16 h-14 rounded-2xl object-fill"
+                />
+              </NavLink>
             </div>
-            <div>
+            {/* <div>
               <NavLink
                 to="/"
                 className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#F43F5E] transition-colors duration-200"
               >
                 Kuri
               </NavLink>
-            </div>
+            </div> */}
           </div>
           <div className="hidden md:flex items-center space-x-1">
             {["About", "Our Products", "Blogs", "Contact Us"].map((item) => (
@@ -102,9 +105,10 @@ const Navbar = () => {
                   </NavLink>
                 </button>
               ))}
-              <Button className="mt-2 w-full bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200">
+              {/* <Button className="mt-2 w-full bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200">
                 Join Community
-              </Button>
+              </Button> */}
+              <GoogleTranslate></GoogleTranslate>
             </div>
           </div>
         )}
