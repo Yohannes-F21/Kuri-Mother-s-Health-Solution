@@ -76,11 +76,6 @@ const About = () => {
               </Link>
             </div>
             <div className="flex-1">
-              {/* <img
-                src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80"
-                alt="Mother and baby"
-                className="rounded-2xl shadow-lg w-full"
-              /> */}
               <div className="hidden md:flex">
                 <Hero />
               </div>

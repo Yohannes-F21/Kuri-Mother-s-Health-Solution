@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mt-8 pt-8 border-t text-center text-gray-600 text-center sm:text-left">
+      <div className="mt-8 pt-8 border-t text-center text-gray-600  sm:text-left">
         <p>&copy; 2025 Kuri Mother's Health Solution. All rights reserved.</p>
       </div>
     </footer>

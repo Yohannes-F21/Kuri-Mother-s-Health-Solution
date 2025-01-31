@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import GoogleTranslate from "./GoogleTranslate";
-import logo from "../Assets/Kuri socialmedia profile 1-02.jpg";
+import logo from "../Assets/Kuri-cropped-2.jpg";
 
 const Navbar = () => {
   // the following code is for the google translator
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="Kuri Social Media Profile"
-                  className="w-16 h-14 rounded-2xl object-fill"
+                  className="w-14 h-14 rounded-full object-fill"
                 />
               </NavLink>
             </div>
