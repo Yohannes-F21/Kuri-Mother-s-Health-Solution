@@ -2,6 +2,10 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import type { Blog } from "../../types";
+import { useLoaderData, useNavigate } from "react-router-dom";
+
 const sampleArticle = {
   featured: {
     title: "Is Breastfeeding Still the Best Choice?",
@@ -26,24 +30,42 @@ Our expert lactation consultants recommend starting with the basics: ensuring pr
     date: "January 20, 2025",
   },
 };
+
+export const loader = async (): Promise<{ blogs: Blog }> => {
+  const response = await axios({
+    baseURL: "https://kuri-backend-ub77.onrender.com",
+    url: "/blogs",
+    method: "GET",
+  });
+  // console.log(response);
+  const blogs = response.data.blogs;
+  // console.log(blogs);
+
+  return { blogs };
+};
 const Blog = () => {
+  const { blogs } = useLoaderData();
+  console.log(blogs);
   const [modalContent, setModalContent] = useState<{
     isOpen: boolean;
     title: string;
     content: string;
-    date: string;
+    created: string;
+    img: string;
   }>({
     isOpen: false,
     title: "",
     content: "",
-    date: "",
+    created: "",
+    img: "",
   });
-  const openModal = (article: typeof sampleArticle.featured) => {
+  const openModal = (blog: Blog) => {
     setModalContent({
       isOpen: true,
-      title: article.title,
-      content: article.content,
-      date: article.date,
+      title: blog.title,
+      content: blog.content,
+      created: blog.created,
+      img: blog.thumbnail,
     });
   };
   const closeModal = () => {
@@ -52,9 +74,23 @@ const Blog = () => {
       isOpen: false,
     }));
   };
+  const formatDate = (isoString: string): string => {
+    const date = new Date(isoString);
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(date);
+  };
+  const image = (url: string): string => {
+    if (url === null) {
+      return "https://images.unsplash.com/photo-1555252333-9f8e92e65df9";
+    }
+    return "https://kuri-backend-ub77.onrender.com/" + url;
+  };
   return (
     <div className="w-full min-h-screen bg-white">
-      <div className=" pt-24 w-full bg-[#FDF6F8] relative overflow-hidden">
+      <div className=" pt-24 w-full bg-[#faf7eb] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9')] opacity-5" />
         <div className="max-w-7xl mx-auto px-4 py-16 relative">
           <h1 className="text-4xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
@@ -67,12 +103,13 @@ const Blog = () => {
             <input
               type="text"
               placeholder="Search articles by topic, keyword, or date..."
-              className="w-full px-6 py-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F4C5D3] pl-14"
+              className="w-full px-6 py-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FBC53F] pl-14"
             />
             <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
         </div>
       </div>
+      {/* Featured Article */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
           <div className="md:flex">
@@ -84,7 +121,7 @@ const Blog = () => {
               />
             </div>
             <div className="md:w-1/2 p-8">
-              <span className="text-[#F4C5D3] font-medium">
+              <span className="text-[#FBC53F] font-medium">
                 Featured Article
               </span>
               <h2 className="text-2xl font-semibold mt-2 mb-4">
@@ -101,8 +138,8 @@ const Blog = () => {
                   {sampleArticle.featured.date}
                 </span>
                 <button
-                  onClick={() => openModal(sampleArticle.featured)}
-                  className=" text-white px-6 py-2 rounded-full bg-[#F43F5E] hover:bg-[#E11D48] transition-colors"
+                  // onClick={() => openModal(sampleArticle.featured)}
+                  className=" text-white px-6 py-2 rounded-full bg-[#FBC53F] hover:bg-[#faaf18] transition-colors"
                 >
                   Read More
                 </button>
@@ -113,38 +150,28 @@ const Blog = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+          {blogs.map((blog: Blog, index: number) => (
             <div
-              key={item}
+              key={index}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
             >
               <img
-                src={`https://images.unsplash.com/photo-${
-                  item === 1
-                    ? "1516627145497-ae6968895b74"
-                    : item === 2
-                    ? "1543396436-8633f99c8813"
-                    : "1555252333-9f8e92e65df9"
-                }`}
+                src={image(blog.thumbnail)}
                 alt="Blog post image"
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  {sampleArticle.regular.title}
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
                 <p className="text-gray-600 mb-4">
-                  Learn about effective natural methods to boost your milk
-                  production and ensure your baby gets the nutrition they
-                  need...
+                  {blog.content.substring(0, 100)}...
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500">
-                    {sampleArticle.regular.date}
+                    {formatDate(blog.updated)}
                   </span>
                   <button
-                    onClick={() => openModal(sampleArticle.regular)}
-                    className="text-[#F43F5E] hover:text-[#E4B5C3] font-medium"
+                    onClick={() => openModal(blog)}
+                    className="text-[#FBC53F] hover:text-[#faaf18] font-medium"
                   >
                     Read More →
                   </button>
@@ -154,7 +181,7 @@ const Blog = () => {
           ))}
         </div>
       </div>
-      <div className="bg-[#FDF6F8] w-full py-12">
+      <div className="bg-[#faf7eb] w-full py-12">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h3 className="text-2xl font-semibold mb-4">
             Looking for more tips?
@@ -163,7 +190,7 @@ const Blog = () => {
             Join the Kuri Community for exclusive insights and support.
           </p>
           <Link to={"/contact-us"}>
-            <button className=" text-white px-8 py-3 rounded-full bg-[#F43F5E] hover:bg-[#E11D48] transition-colors">
+            <button className=" text-white px-8 py-3 rounded-full bg-[#FBC53F] hover:bg-[#faaf18] transition-colors">
               Join Our Community
             </button>
           </Link>
@@ -175,7 +202,8 @@ const Blog = () => {
         onClose={closeModal}
         title={modalContent.title}
         content={modalContent.content}
-        date={modalContent.date}
+        created={modalContent.created}
+        img={modalContent.img}
       />
     </div>
   );

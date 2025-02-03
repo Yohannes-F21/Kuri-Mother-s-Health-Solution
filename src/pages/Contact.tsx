@@ -37,7 +37,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <MessageCircle className="w-6 h-6 mr-4 text-gray-600" />
-                <button className="bg-[#FFE5E5] text-gray-800 px-6 py-2 rounded-lg hover:bg-[#FFD1D1] transition-colors">
+                <button className="bg-[#FBC53F] text-gray-800 px-6 py-2 rounded-lg hover:bg-[#faaf18] transition-colors">
                   Join Our Telegram Group
                 </button>
               </div>
@@ -98,7 +98,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#FFE5E5] text-gray-800 py-3 rounded-lg hover:bg-[#FFD1D1] transition-colors"
+                className="w-full bg-[#FBC53F] text-gray-800 py-3 rounded-lg hover:bg-[#faaf18] transition-colors"
               >
                 Send Message
               </button>

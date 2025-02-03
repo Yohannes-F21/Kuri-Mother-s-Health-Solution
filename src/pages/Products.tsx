@@ -99,9 +99,9 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full bg-[#FFE5E5] text-gray-800 py-2 rounded-lg hover:bg-[#FFD1D1] transition-colors">
+                {/* <button className="w-full bg-[#FFE5E5] text-gray-800 py-2 rounded-lg hover:bg-[#FFD1D1] transition-colors">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
@@ -113,7 +113,7 @@ const Products = () => {
           <h2 className="text-3xl font-semibold mb-6">
             Ready to empower your breastfeeding journey?
           </h2>
-          <button className="bg-[#FFE5E5] text-gray-800 px-8 py-3 rounded-lg hover:bg-[#FFD1D1] transition-colors text-lg">
+          <button className="bg-[#FBC53F] text-gray-900 px-8 py-3 rounded-lg hover:bg-[#faaf18] transition-colors text-lg">
             Start Shopping
           </button>
         </div>

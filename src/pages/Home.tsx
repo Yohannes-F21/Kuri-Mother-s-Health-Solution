@@ -12,18 +12,18 @@ import { Link } from "react-router-dom";
 const Home = () => {
   //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="w-full min-h-screen bg-[#FFFAF6]">
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#FFE5D9] to-[#FFFAF6]">
+    <div className="w-full min-h-screen bg-[#faf7eb]">
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#104a52] to-[#46aeb5]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-5">
             <div className="flex-1 space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Welcome to Kuri Mother's Health Solution
               </h1>
-              <p className="text-xl text-gray-700">
+              <p className="text-xl text-gray-900">
                 The first lactation support platform in Ethiopia
               </p>
-              <Button className="bg-[#2D3748] text-white hover:bg-gray-700 px-8 py-6 text-lg">
+              <Button className="bg-[#FBC53F] text-white hover:bg-[#faaf18] px-8 py-6 text-lg">
                 <Link to={"/our-products"}>Explore Our Solutions</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -117,7 +117,7 @@ const Home = () => {
                 <div className="p-6">
                   <h3 className="font-semibold mb-2">{product.title}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
-                  <Button className="w-full bg-[#2D3748] text-white hover:bg-gray-700">
+                  <Button className="w-full bg-[#104a52] text-white hover:bg-[#46aeb5]">
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Shop Now
                   </Button>

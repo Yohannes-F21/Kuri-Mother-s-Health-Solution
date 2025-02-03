@@ -4,9 +4,31 @@ interface ModalProps {
   onClose: () => void;
   title: string;
   content: string;
-  date: string;
+  created: string;
+  img: string;
 }
-const Modal = ({ isOpen, onClose, title, content, date }: ModalProps) => {
+const formatDate = (isoString: string): string => {
+  const date = new Date(isoString);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+const image = (url: string): string => {
+  if (url === null) {
+    return "https://images.unsplash.com/photo-1555252333-9f8e92e65df9";
+  }
+  return "https://kuri-backend-ub77.onrender.com/" + url;
+};
+const Modal = ({
+  isOpen,
+  onClose,
+  title,
+  content,
+  created,
+  img,
+}: ModalProps) => {
   if (!isOpen) return null;
   return (
     <div
@@ -23,7 +45,7 @@ const Modal = ({ isOpen, onClose, title, content, date }: ModalProps) => {
               <h2 className="text-2xl font-semibold text-[#2D3648] mb-2">
                 {title}
               </h2>
-              <p className="text-gray-500">{date}</p>
+              <p className="text-gray-500">{formatDate(created)}</p>
             </div>
             <button
               onClick={onClose}
@@ -35,7 +57,7 @@ const Modal = ({ isOpen, onClose, title, content, date }: ModalProps) => {
           </div>
           <div className="prose max-w-none">
             <img
-              src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9"
+              src={image(img)}
               alt="Article header image"
               className="w-full h-64 object-cover rounded-xl mb-6"
             />

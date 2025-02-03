@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import { loader as blogLoader } from "./pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blog />,
+        loader: blogLoader,
       },
       {
         path: "/contact-us",

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import GoogleTranslate from "./GoogleTranslate";
-import logo from "../Assets/Kuri-cropped-2.jpg";
+import logo from "../Assets/Kuri Logo.png";
 
 const Navbar = () => {
   // the following code is for the google translator
@@ -25,19 +25,16 @@ const Navbar = () => {
   }, [menuRef]);
 
   return (
-    <nav className="fixed top-0 w-full bg-white/50 backdrop-blur-sm z-50 border-b shadow-sm">
+    <nav className="fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-2">
-            {/* <div className="bg-[#FFD6E0] p-2 rounded-full">
-              <Heart className="h-6 w-6 text-[#2D3748]" />
-            </div> */}
             <div className="logo ">
               <NavLink to={"/"}>
                 <img
                   src={logo}
                   alt="Kuri Social Media Profile"
-                  className="w-14 h-14 rounded-full object-fill"
+                  className="w-14 h-10 object-fill"
                 />
               </NavLink>
             </div>
@@ -58,8 +55,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-gray-900 bg-[#FFE5D9]"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-[#FFE5D9]/50"
+                      ? "text-gray-900 bg-[#FBC53F]"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-[#faaf18]/50"
                   }`
                 }
               >
@@ -105,10 +102,6 @@ const Navbar = () => {
                   </NavLink>
                 </button>
               ))}
-              {/* <Button className="mt-2 w-full bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200">
-                Join Community
-              </Button> */}
-              <GoogleTranslate></GoogleTranslate>
             </div>
           </div>
         )}
