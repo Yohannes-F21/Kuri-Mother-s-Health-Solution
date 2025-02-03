@@ -25,16 +25,16 @@ const Navbar = () => {
   }, [menuRef]);
 
   return (
-    <nav className="fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex items-center space-x-2">
-            <div className="logo ">
+    <nav className='fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex justify-between items-center h-20'>
+          <div className='flex items-center space-x-2'>
+            <div className='logo '>
               <NavLink to={"/"}>
                 <img
                   src={logo}
-                  alt="Kuri Social Media Profile"
-                  className="w-14 h-10 object-fill"
+                  alt='Kuri Social Media Profile'
+                  className='w-14 h-10 object-fill'
                 />
               </NavLink>
             </div>
@@ -47,19 +47,18 @@ const Navbar = () => {
               </NavLink>
             </div> */}
           </div>
-          <div className="hidden md:flex items-center space-x-1">
+          <div className='hidden md:flex items-center space-x-1'>
             {["About", "Our Products", "Blogs", "Contact Us"].map((item) => (
               <NavLink
                 key={item}
                 to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
                 className={({ isActive }) =>
-                  `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-gray-900 bg-[#FBC53F]"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-[#faaf18]/50"
+                      ? "text-white bg-[#104A52]"
+                      : "text-[#104A52] hover:text-white hover:bg-[#104A52]"
                   }`
-                }
-              >
+                }>
                 {item}
               </NavLink>
             ))}
@@ -69,22 +68,23 @@ const Navbar = () => {
             </Button> */}
             <GoogleTranslate></GoogleTranslate>
           </div>
-          <div className="md:hidden">
+          <div className='md:hidden'>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
+              className='p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200'>
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className='h-6 w-6' />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className='h-6 w-6' />
               )}
             </button>
           </div>
         </div>
         {isMenuOpen && (
-          <div ref={menuRef} className="md:hidden pb-4 px-4">
-            <div className="flex flex-col space-y-2">
+          <div
+            ref={menuRef}
+            className='md:hidden pb-4 px-4'>
+            <div className='flex flex-col space-y-2'>
               {["About", "Our Products", "Blogs", "Contact Us"].map((item) => (
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <NavLink
@@ -96,8 +96,7 @@ const Navbar = () => {
                           ? "text-gray-900 bg-[#FFE5D9]/75"
                           : "text-gray-600 hover:text-gray-900 hover:bg-[#FFE5D9]/50"
                       }`
-                    }
-                  >
+                    }>
                     {item}
                   </NavLink>
                 </button>

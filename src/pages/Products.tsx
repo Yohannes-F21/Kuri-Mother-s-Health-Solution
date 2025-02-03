@@ -1,4 +1,6 @@
 import { Leaf } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const Products = () => {
   const products = [
     {
@@ -53,48 +55,46 @@ const Products = () => {
     },
   ];
   return (
-    <div className="w-full">
+    <div className='w-full'>
       {/* Hero Section */}
-      <section className="relative h-[500px] w-full overflow-hidden">
+      <section className='relative h-[500px] w-full overflow-hidden'>
         <img
-          src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1440"
-          alt="Mother and baby"
-          className="absolute inset-0 w-full h-full object-cover"
+          src='https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1440'
+          alt='Mother and baby'
+          className='absolute inset-0 w-full h-full object-cover'
         />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold text-white mb-4">
+        <div className='absolute inset-0 bg-black/30' />
+        <div className='relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center'>
+          <h1 className='text-5xl font-bold text-white mb-4 text-center'>
             Enhance Your Breastfeeding Journey with Our Natural Products
           </h1>
-          <p className="text-xl text-white/90">
+          <p className='text-xl text-white/90'>
             Carefully crafted with organic, research-backed ingredients for
             effective results
           </p>
         </div>
       </section>
       {/* Products Grid */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className='max-w-7xl mx-auto px-4 py-16'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {products.map((product) => (
             <div
               key={product.name}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
+              className='bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow'>
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover"
+                className='w-full h-48 object-cover'
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <ul className="space-y-2 mb-6">
+              <div className='p-6'>
+                <h3 className='text-xl font-semibold mb-2'>{product.name}</h3>
+                <p className='text-gray-600 mb-4'>{product.description}</p>
+                <ul className='space-y-2 mb-6'>
                   {product.benefits.map((benefit) => (
                     <li
                       key={benefit}
-                      className="flex items-center text-gray-600"
-                    >
-                      <Leaf className="w-4 h-4 mr-2 text-green-500" />
+                      className='flex items-center text-gray-600'>
+                      <Leaf className='w-4 h-4 mr-2 text-green-500' />
                       {benefit}
                     </li>
                   ))}
@@ -108,14 +108,14 @@ const Products = () => {
         </div>
       </section>
       {/* CTA Section */}
-      <section className="bg-[#FFFAF0] py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold mb-6">
+      <section className='bg-[#FFFAF0] py-16'>
+        <div className='max-w-7xl mx-auto px-4 text-center'>
+          <h2 className='text-3xl font-semibold mb-6'>
             Ready to empower your breastfeeding journey?
           </h2>
-          <button className="bg-[#FBC53F] text-gray-900 px-8 py-3 rounded-lg hover:bg-[#faaf18] transition-colors text-lg">
+          <Button className='bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg'>
             Start Shopping
-          </button>
+          </Button>
         </div>
       </section>
     </div>
