@@ -1,3 +1,4 @@
+import React from "react";
 import Error from "./pages/Error";
 import About from "./pages/About";
 import HomeLayout from "./pages/HomeLayout";
@@ -8,6 +9,11 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import { loader as blogLoader } from "./pages/Blog";
+const HydrateFallback = () => (
+  <div className="flex items-center justify-center h-screen">
+    <p>Loading...</p>
+  </div>
+);
 
 const router = createBrowserRouter([
   {
@@ -41,5 +47,9 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <React.Suspense fallback={<HydrateFallback />}>
+      <RouterProvider router={router} />
+    </React.Suspense>
+  );
 }

@@ -88,6 +88,25 @@ const Blog = () => {
     }
     return "https://kuri-backend-ub77.onrender.com/" + url;
   };
+
+  console.log(image("uploads/thumbnail-1738575007162.jpg"));
+
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [isSearching, setIsSearching] = useState<boolean>(false);
+  const handleSearch = (value: any) => {
+    console.log(value);
+
+    setIsSearching(true);
+    setSearchTerm(value);
+  };
+  // if (searchTerm === "") {
+  //   setIsSearching(false);
+  // }
+
+  // Filter blogs based on the search term
+  const filteredBlogs = blogs.filter((blog: Blog) =>
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <div className="w-full min-h-screen bg-white">
       <div className=" pt-24 w-full bg-[#faf7eb] relative overflow-hidden">
@@ -103,6 +122,7 @@ const Blog = () => {
             <input
               type="text"
               placeholder="Search articles by topic, keyword, or date..."
+              onChange={(e) => handleSearch(e.target.value)}
               className="w-full px-6 py-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FBC53F] pl-14"
             />
             <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
@@ -110,39 +130,44 @@ const Blog = () => {
         </div>
       </div>
       {/* Featured Article */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
-          <div className="md:flex">
-            <div className="md:w-1/2">
-              <img
-                src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9"
-                alt="Mother breastfeeding baby"
-                className="w-full h-[400px] object-cover"
-              />
-            </div>
-            <div className="md:w-1/2 p-8">
-              <span className="text-[#FBC53F] font-medium">
-                Featured Article
-              </span>
-              <h2 className="text-2xl font-semibold mt-2 mb-4">
-                {sampleArticle.featured.title}
-              </h2>
-              <p className="text-gray-600 mb-6">
-                Discover the latest research and evidence-based insights about
-                the benefits of breastfeeding for both mother and child. We
-                explore the scientific backing behind this natural nurturing
-                process...
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-gray-500">
-                  {sampleArticle.featured.date}
+      <div className={isSearching ? "hidden" : "block"}>
+        <div className="max-w-7xl mx-auto px-4 py-12 ">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <img
+                  src={image(blogs?.[2].thumbnail)}
+                  alt="Mother breastfeeding baby"
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="md:w-1/2 p-8">
+                <span className="text-[#FBC53F] font-medium">
+                  Featured Article
                 </span>
-                <button
-                  // onClick={() => openModal(sampleArticle.featured)}
-                  className=" text-white px-6 py-2 rounded-full bg-[#FBC53F] hover:bg-[#faaf18] transition-colors"
-                >
-                  Read More
-                </button>
+                <h2 className="text-2xl font-semibold mt-2 mb-4">
+                  {blogs?.[2].title}
+                </h2>
+                <p className="text-gray-600 mb-6 ">
+                  {/* {blogs?.[0].content.substring(0, 100)} */}
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: blogs?.[2].content.substring(0, 300),
+                    }}
+                  />
+                  <span className="text-2xl tracking-widest">...</span>
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500">
+                    {formatDate(blogs?.[2].updated)}
+                  </span>
+                  <button
+                    onClick={() => openModal(blogs?.[2])}
+                    className=" text-white px-6 py-2 rounded-full bg-[#FBC53F] hover:bg-[#faaf18] transition-colors"
+                  >
+                    Read More
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -150,35 +175,47 @@ const Blog = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog: Blog, index: number) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-            >
-              <img
-                src={image(blog.thumbnail)}
-                alt="Blog post image"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {blog.content.substring(0, 100)}...
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-500">
-                    {formatDate(blog.updated)}
-                  </span>
-                  <button
-                    onClick={() => openModal(blog)}
-                    className="text-[#FBC53F] hover:text-[#faaf18] font-medium"
-                  >
-                    Read More →
-                  </button>
+          {filteredBlogs.length === 0 ? (
+            <p className="text-gray-500  text-center text-xl col-span-3">
+              No blogs found. Please try a different search term!!!!
+            </p>
+          ) : (
+            filteredBlogs
+              .filter((blog: Blog) => blog.isPublished)
+              .map((blog: Blog, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <img
+                    src={image(blog.thumbnail)}
+                    alt="Blog post image"
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-2">{blog.title}</h3>
+                    <p className="text-gray-600 mb-4">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: blog.content.substring(0, 100),
+                        }}
+                      />
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-500">
+                        {formatDate(blog.updated)}
+                      </span>
+                      <button
+                        onClick={() => openModal(blog)}
+                        className="text-[#FBC53F] hover:text-[#faaf18] font-medium"
+                      >
+                        Read More →
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))
+          )}
         </div>
       </div>
       <div className="bg-[#faf7eb] w-full py-12">

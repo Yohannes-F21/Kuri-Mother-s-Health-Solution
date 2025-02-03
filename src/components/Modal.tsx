@@ -62,9 +62,10 @@ const Modal = ({
               className="w-full h-64 object-cover rounded-xl mb-6"
             />
             <div className="text-gray-600 space-y-4">
-              {content.split("\n").map((paragraph, index) => (
+              {/* {content.split("\n").map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
-              ))}
+              ))} */}
+              <div dangerouslySetInnerHTML={{ __html: content }} />
             </div>
           </div>
           <div className="mt-8 flex justify-end">
