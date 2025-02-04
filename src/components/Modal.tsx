@@ -71,7 +71,7 @@ const Modal = ({
           <div className="mt-8 flex justify-end">
             <button
               onClick={onClose}
-              className=" text-white px-6 py-2 rounded-full bg-[#F43F5E] hover:bg-[#E11D48] transition-colors"
+              className=" text-white px-6 py-2 rounded-full bg-[#104a52] hover:bg-[#2D3648] transition-colors"
             >
               Close Article
             </button>

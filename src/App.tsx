@@ -3,6 +3,7 @@ import Error from "./pages/Error";
 import About from "./pages/About";
 import HomeLayout from "./pages/HomeLayout";
 import Products from "./pages/Products";
+import OurServices from "./pages/OurServices";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/our-products",
         element: <Products />,
+      },
+      {
+        path: "/our-Services",
+        element: <OurServices />,
       },
       {
         path: "/blogs",
