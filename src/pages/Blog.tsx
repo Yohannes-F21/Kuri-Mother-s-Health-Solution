@@ -4,7 +4,7 @@ import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 export const loader = async (): Promise<{ blogs: Blog }> => {
   const response = await axios({
