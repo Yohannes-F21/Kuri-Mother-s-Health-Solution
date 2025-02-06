@@ -19,7 +19,7 @@ const image = (url: string): string => {
   if (url === null) {
     return "https://images.unsplash.com/photo-1555252333-9f8e92e65df9";
   }
-  return "https://kuri-backend-ub77.onrender.com/" + url;
+  return url;
 };
 const Modal = ({
   isOpen,

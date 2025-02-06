@@ -1,4 +1,5 @@
-import { Heart, Users, Book, Library, ArrowRight } from "lucide-react";
+import { Heart, Users, Book, ArrowRight } from "lucide-react";
+import { HugeiconsPeerToPeer02 } from "../components/PeerNetworkIcon";
 function OurServices() {
   return (
     <div className="w-full min-h-screen bg-white">
@@ -11,12 +12,12 @@ function OurServices() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold text-white mb-4 text-center">
-            Empowering Mothers, One Feed at a Time
+            Digital Platform
           </h1>
           <p className="text-xl text-white/90 text-center">
-            Join Ethiopia's first lactation support platform offering
-            professional guidance, a vibrant community, and essential resources
-            to make your breastfeeding journey easier.
+            Our digital platform complements our products by providing mothers
+            with a comprehensive support system tailored to their breastfeeding
+            needs.
           </p>
         </div>
       </section>
@@ -26,11 +27,12 @@ function OurServices() {
             <div className="p-8 rounded-2xl bg-[#FDF8F6] transition-transform hover:scale-[1.02]">
               <Heart className="w-12 h-12 text-[#E68EA3] mb-4" />
               <h3 className="text-2xl font-bold text-[#2D3648] mb-3">
-                One-on-One Expert Consultation
+                Expert Guidance
               </h3>
               <p className="text-[#4A5568] mb-6">
-                Get personalized support through virtual or in-person
-                consultations with our certified lactation experts.
+                Access consultations with lactation consultants, pediatricians,
+                and maternal health experts. Participate in Q&A sessions for
+                practical advice.
               </p>
               <button className="inline-flex items-center px-6 py-3 bg-[#E68EA3] text-white rounded-full hover:bg-[#d47a91] transition-colors">
                 Book a Session
@@ -38,13 +40,13 @@ function OurServices() {
               </button>
             </div>
             <div className="p-8 rounded-2xl bg-[#F0F7FF] transition-transform hover:scale-[1.02]">
-              <Users className="w-12 h-12 text-[#7EB6FF] mb-4" />
+              <HugeiconsPeerToPeer02 className="w-12 h-12 text-[#7EB6FF] mb-4" />
               <h3 className="text-2xl font-bold text-[#2D3648] mb-3">
-                Community Peer Support Groups
+                Peer-Support Network
               </h3>
               <p className="text-[#4A5568] mb-6">
-                Connect with other mothers, share experiences, and find
-                encouragement in our supportive community.
+                Connect with other mothers where mothers share their unique
+                postpartal experiences and encouragement.
               </p>
               <a href="https://t.me/kurimother">
                 <button className="inline-flex items-center px-6 py-3 bg-[#7EB6FF] text-white rounded-full hover:bg-[#6da1f1] transition-colors">
@@ -68,16 +70,15 @@ function OurServices() {
               </button>
             </div>
             <div className="p-8 rounded-2xl bg-[#FFF5F5] transition-transform hover:scale-[1.02]">
-              <Library className="w-12 h-12 text-[#FF8A80] mb-4" />
+              <Users className="w-12 h-12 text-[#FF8A80] mb-4" />
               <h3 className="text-2xl font-bold text-[#2D3648] mb-3">
-                Kuri's Digital Library
+                Trusted Community
               </h3>
               <p className="text-[#4A5568] mb-6">
-                Download our collection of ebooks, guides, and infographics on
-                breastfeeding techniques and postpartum care.
+                A safe space where mothers can find guidance and companionship.
               </p>
               <button className="inline-flex items-center px-6 py-3 bg-[#FF8A80] text-white rounded-full hover:bg-[#ff7567] transition-colors">
-                Download Resources
+                Join Community
                 <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>

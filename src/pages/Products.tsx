@@ -1,5 +1,6 @@
 import { Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const products = [
@@ -8,7 +9,7 @@ const Products = () => {
       description:
         "Boost your milk supply naturally with this refreshing blend of anise.",
       image:
-        "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&q=80&w=500",
+        "https://goodeggs4.imgix.net/92599f79-3115-4f0f-94d7-86ba10ba96ff.jpg?w=840&h=525&fm=jpg&q=80&fit=crop",
       benefits: [
         "Natural ingredients",
         "Proven effectiveness",
@@ -19,18 +20,18 @@ const Products = () => {
       name: "Mint Lactation Tea",
       description: "A soothing blend to support your breastfeeding journey.",
       image:
-        "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&q=80&w=500",
+        "https://assets.clevelandclinic.org/transform/11a964aa-8c62-441a-acbd-7b5b49358203/Milk-Supply-Supplements-869682138-967x544-1_jpg",
       benefits: ["Refreshing flavor", "Digestive support", "Caffeine free"],
     },
     {
       name: "Fenugreek Blend",
       description: "Traditional herbs combined for maximum effectiveness.",
       image:
-        "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&q=80&w=500",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDpWUDiCw3DqxKn_6B6WKsAOh001ymKb5E4Q&s",
       benefits: [
         "Enhanced milk production",
         "Rich in nutrients",
-        "Time-tested formula",
+        "Carefully crafted formula",
       ],
     },
     {
@@ -44,57 +45,60 @@ const Products = () => {
       ],
     },
     {
-      name: "Supplements",
+      name: "Breastfeeding Supplements",
       description: "Essential nutrients for nursing mothers",
-      image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
       benefits: [
         "Enhanced milk production",
         "Rich in nutrients",
-        "Time-tested formula",
+        "Scientifically Formulated for Lactation Support",
       ],
     },
   ];
   return (
-    <div className='w-full'>
+    <div className="w-full">
       {/* Hero Section */}
-      <section className='relative h-[500px] w-full overflow-hidden'>
+      <section className="relative h-[500px] w-full overflow-hidden">
         <img
-          src='https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1440'
-          alt='Mother and baby'
-          className='absolute inset-0 w-full h-full object-cover'
+          src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1440"
+          alt="Mother and baby"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className='absolute inset-0 bg-black/30' />
-        <div className='relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center'>
-          <h1 className='text-5xl font-bold text-white mb-4 text-center'>
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
+          <h1 className="text-5xl font-bold text-white mb-4 text-center">
             Enhance Your Breastfeeding Journey with Our Natural Products
           </h1>
-          <p className='text-xl text-white/90'>
+          <p className="text-xl text-white/90">
             Carefully crafted with organic, research-backed ingredients for
             effective results
           </p>
         </div>
       </section>
       {/* Products Grid */}
-      <section className='max-w-7xl mx-auto px-4 py-16'>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+      <section className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <div
               key={product.name}
-              className='bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow'>
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
               <img
                 src={product.image}
                 alt={product.name}
-                className='w-full h-48 object-cover'
+                className="w-full h-48 object-cover"
               />
-              <div className='p-6'>
-                <h3 className='text-xl font-semibold mb-2'>{product.name}</h3>
-                <p className='text-gray-600 mb-4'>{product.description}</p>
-                <ul className='space-y-2 mb-6'>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
+                <p className="text-gray-600 mb-4">{product.description}</p>
+                <ul className="space-y-2 mb-6">
                   {product.benefits.map((benefit) => (
                     <li
                       key={benefit}
-                      className='flex items-center text-gray-600'>
-                      <Leaf className='w-4 h-4 mr-2 text-green-500' />
+                      className="flex items-center text-gray-600"
+                    >
+                      <Leaf className="w-4 h-4 mr-2 text-green-500" />
                       {benefit}
                     </li>
                   ))}
@@ -108,14 +112,16 @@ const Products = () => {
         </div>
       </section>
       {/* CTA Section */}
-      <section className='bg-[#FFFAF0] py-16'>
-        <div className='max-w-7xl mx-auto px-4 text-center'>
-          <h2 className='text-3xl font-semibold mb-6'>
+      <section className="bg-[#FFFAF0] py-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-semibold mb-6">
             Ready to empower your breastfeeding journey?
           </h2>
-          <Button className='bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg'>
-            Start Shopping
-          </Button>
+          <Link to={"/contact-us"}>
+            <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg">
+              Start Shopping
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

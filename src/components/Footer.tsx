@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { MingcuteTelegramFill } from "./TelegramIcon";
 import { Link } from "react-router-dom";
 
@@ -69,14 +69,23 @@ const Footer = () => {
               >
                 <MingcuteTelegramFill className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#104a52] ">
+              <a
+                href="https://www.facebook.com/share/1AmEY4HXwZ/?mibextid=wwXIfr"
+                className="text-gray-600 hover:text-[#104a52] "
+              >
                 <Facebook className="h-6 w-6 " />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#104a52]">
+              <a
+                href="https://www.instagram.com/kuri_mothers?igsh=MThzdzYzYTk3ZGJlbg%3D%3D&utm_source=qr"
+                className="text-gray-600 hover:text-[#104a52]"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-[#104a52]">
-                <Twitter className="h-6 w-6" />
+              <a
+                href="https://www.linkedin.com/company/kuri-mothers-health-solution/"
+                className="text-gray-600 hover:text-[#104a52]"
+              >
+                <Linkedin className="h-6 w-6" />
               </a>
             </div>
           </div>

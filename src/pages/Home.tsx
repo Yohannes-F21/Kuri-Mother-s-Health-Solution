@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-
 import {
   Heart,
   Leaf,
@@ -58,15 +57,17 @@ const Home = () => {
       <section className=" p-4 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-5">
-            <div className="flex-1 space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#104a52] leading-tight">
-                Welcome to Kuri Mother's Health Solution
+            <div className="flex-1 space-y-8">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#104a52] leading-tight">
+                The First Lactation Support Platform In Ethiopia
               </h1>
-              <p className="text-xl font-semibold">
-                The first lactation support platform in Ethiopia
+              <p className="text-xl font-semibold ">
+                Welcome to Kuri Mother’s Health Solution where we offer
+                lactation products, peer-to-peer support, expert guidance, and a
+                trusted community—all in one place for breastfeeding mothers.
               </p>
               <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg">
-                <Link to={"/our-products"}>Explore Our Solutions</Link>
+                <Link to={"/contact-us"}>Join Our Community</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -144,9 +145,9 @@ const Home = () => {
                 description: "Delicious cookies with galactagogues",
               },
               {
-                title: "Supplements",
+                title: "Breastfeeding Supplements",
                 image:
-                  "https://images.unsplash.com/photo-1471864190281-a93a3070b6de",
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
                 description: "Essential nutrients for nursing mothers",
               },
             ].map((product, index) => (
@@ -208,6 +209,9 @@ const Home = () => {
         >
           <ChevronRight className="h-6 w-6 text-gray-700" />
         </button>
+      </section>
+      <section className="mb-10">
+        <PartnerCarousel />
       </section>
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#2D3748] text-white">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
