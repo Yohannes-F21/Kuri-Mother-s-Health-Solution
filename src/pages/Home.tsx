@@ -12,27 +12,30 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PartnerCarousel from "@/components/HomePage/PartnerCarousel";
+import { useTranslation } from "react-i18next";
+import "../i18n";
+import { t } from "i18next";
+
 const testimonials = [
   {
-    quote:
-      "Kuri's lactation tea has made a huge difference for me. My milk supply increased, and I felt more relaxed during feeding times.",
-    author: "- Bethlehem T.",
-    location: "Addis Ababa",
+    quote: t("quote_bet"),
+    author: t("author_bet"),
+    location: t("location_bet"),
   },
   {
-    quote:
-      "I was struggling with low milk supply, but after using Kuri, I noticed a big improvement. Highly recommended!",
-    author: "- Helen G.",
-    location: "Nairobi",
+    quote: t("quote_hel"),
+    author: t("author_hel"),
+    location: t("location_hel"),
   },
   {
-    quote:
-      "Amazing tea! It helped me feel more at ease during breastfeeding, and my baby seems happier too.",
-    author: "- Amina K.",
-    location: "Lagos",
+    quote: t("quote_ami"),
+    author: t("author_ami"),
+    location: t("location_ami"),
   },
 ];
 const Home = () => {
+  const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevTestimonial = () => {
@@ -58,16 +61,14 @@ const Home = () => {
         <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
           <div className="flex flex-col md:flex-row items-center justify-center gap-5">
             <div className="flex-1 space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#104a52] leading-tight">
-                The First Lactation Support Platform In Ethiopia
+              <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-[#104a52] leading-tight">
+                {t("welcome")}
               </h1>
               <p className="text-xl font-semibold ">
-                Welcome to Kuri Mother’s Health Solution where we offer
-                lactation products, peer-to-peer support, expert guidance, and a
-                trusted community—all in one place for breastfeeding mothers.
+                {t("welcome_description")}
               </p>
               <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg">
-                <Link to={"/contact-us"}>Join Our Community</Link>
+                <Link to={"/contact-us"}>{t("welcome_btn")}</Link>
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -85,40 +86,42 @@ const Home = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-12">
-            Our Key Features
+            {t("key_features")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6 rounded-lg bg-white shadow-sm">
               <div className="inline-block p-3 bg-[#C7E8CA] rounded-full mb-4">
                 <Leaf className="h-6 w-6 text-gray-700" />
               </div>
-              <h3 className="font-semibold mb-2">Natural Products</h3>
+              <h3 className="font-semibold mb-2">{t("natural_products")}</h3>
               <p className="text-gray-600">
-                Organic lactation support products
+                {t("natural_products_description")}
               </p>
             </div>
             <div className="text-center p-6 rounded-lg bg-white shadow-sm">
               <div className="inline-block p-3 bg-[#C7E8CA] rounded-full mb-4">
                 <Users className="h-6 w-6 text-gray-700" />
               </div>
-              <h3 className="font-semibold mb-2">Peer Support</h3>
-              <p className="text-gray-600">Connect with other mothers</p>
+              <h3 className="font-semibold mb-2">{t("peer_support")}</h3>
+              <p className="text-gray-600">{t("peer_support_description")}</p>
             </div>
             <div className="text-center p-6 rounded-lg bg-white shadow-sm">
               <div className="inline-block p-3 bg-[#C7E8CA] rounded-full mb-4">
                 <Heart className="h-6 w-6 text-gray-700" />
               </div>
-              <h3 className="font-semibold mb-2">Expert Guidance</h3>
+              <h3 className="font-semibold mb-2">{t("expert_guidance")}</h3>
               <p className="text-gray-600">
-                Professional lactation consultants
+                {t("expert_guidance_description")}
               </p>
             </div>
             <div className="text-center p-6 rounded-lg bg-white shadow-sm">
               <div className="inline-block p-3 bg-[#C7E8CA] rounded-full mb-4">
                 <MessageCircle className="h-6 w-6 text-gray-700" />
               </div>
-              <h3 className="font-semibold mb-2">Trusted Community</h3>
-              <p className="text-gray-600">Safe space for mothers</p>
+              <h3 className="font-semibold mb-2">{t("trusted_community")}</h3>
+              <p className="text-gray-600">
+                {t("trusted_community_description")}
+              </p>
             </div>
           </div>
         </div>
@@ -126,27 +129,27 @@ const Home = () => {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-12">
-            Our Products
+            {t("products_title")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Lactation Tea",
+                title: t("anise_title"),
                 image:
                   "https://images.unsplash.com/photo-1544787219-7f47ccb76574",
-                description: "Natural herbs to support milk production",
+                description: t("anise_description"),
               },
               {
-                title: "Lactation Cookies",
+                title: t("cookies_title"),
                 image:
                   "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
-                description: "Delicious cookies with galactagogues",
+                description: t("cookies_description"),
               },
               {
-                title: "Breastfeeding Supplements",
+                title: t("supplements_title"),
                 image:
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
-                description: "Essential nutrients for nursing mothers",
+                description: t("supplements_description"),
               },
             ].map((product, index) => (
               <div
@@ -163,7 +166,7 @@ const Home = () => {
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <Button className="w-full bg-[#104a52] text-white hover:bg-[#2D3648]">
                     <ShoppingBag className="mr-2 h-4 w-4" />
-                    Shop Now
+                    {t("shop_btn")}
                   </Button>
                 </div>
               </div>
@@ -181,7 +184,9 @@ const Home = () => {
         <div className="max-w-3xl mx-auto text-center relative">
           {/* Testimonial Content */}
 
-          <h2 className="text-3xl font-semibold mb-12">What Mothers Say</h2>
+          <h2 className="text-3xl font-semibold mb-12">
+            {t("testimonial_title")}
+          </h2>
           <motion.div
             key={currentIndex} // Forces reanimation when index changes
             initial={{ opacity: 0, x: 100 }} // Start position
@@ -213,14 +218,11 @@ const Home = () => {
       </section>
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#2D3748] text-white">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
-          <h2 className="text-3xl font-semibold mb-6">Join Our Community</h2>
-          <p className="text-lg mb-8">
-            At Kuri Mother's Health Solution, we're your partner in motherhood.
-            Join our community and thrive in your breastfeeding journey!
-          </p>
+          <h2 className="text-3xl font-semibold mb-6">{t("join_community")}</h2>
+          <p className="text-lg mb-8">{t("join_description")}</p>
           <a href="https://t.me/kurimother">
             <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg flex items-center justify-center group">
-              Join the Conversation on Telegram
+              {t("join_telegram")}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-2" />
             </Button>
           </a>

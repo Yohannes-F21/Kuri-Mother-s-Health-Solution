@@ -4,6 +4,8 @@ import Modal from "../components/Modal";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
+import "../i18n";
+import { useTranslation } from "react-i18next";
 
 export const loader = async (): Promise<{ blogs: Blog[] }> => {
   try {
@@ -18,6 +20,7 @@ export const loader = async (): Promise<{ blogs: Blog[] }> => {
 };
 
 const Blog = () => {
+  const { t } = useTranslation();
   const { blogs } = useLoaderData() as { blogs: Blog[] };
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -97,15 +100,15 @@ const Blog = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9')] opacity-5" />
         <div className="max-w-7xl mx-auto px-4 py-16 relative">
           <h1 className="text-4xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
-            Kuri Blog: Latest Insights on Breastfeeding and Motherhood
+            {t("blog_title")}
           </h1>
           <p className="text-xl text-center text-gray-600 mb-8">
-            Empowering mothers with knowledge, one article at a time.
+            {t("blog_description")}
           </p>
           <div className="max-w-2xl mx-auto relative">
             <input
               type="text"
-              placeholder="Search articles by topic, keyword, or date..."
+              placeholder={t("search_placeholder")}
               onChange={(e) => handleSearch(e.target.value)}
               className="w-full px-6 py-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FBC53F] pl-14"
             />
@@ -131,7 +134,7 @@ const Blog = () => {
               </div>
               <div className="md:w-1/2 p-8">
                 <span className="text-[#FBC53F] font-medium">
-                  Featured Article
+                  {t("featured_article")}
                 </span>
                 <h2 className="text-2xl font-semibold mt-2 mb-4">
                   {blogs[0].title}
@@ -152,7 +155,7 @@ const Blog = () => {
                     onClick={() => openModal(blogs[0])}
                     className="text-white px-6 py-2 rounded-full bg-[#104a52] hover:bg-[#2D3648] transition-colors"
                   >
-                    Read More
+                    {t("read_more")}
                   </button>
                 </div>
               </div>
@@ -166,7 +169,7 @@ const Blog = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredBlogs.length === 0 ? (
             <p className="text-gray-500 text-center text-xl col-span-3">
-              No blogs found. Please try a different search term!
+              {t("no_blogs_found")}
             </p>
           ) : (
             filteredBlogs.map((blog, index) => (
@@ -199,7 +202,7 @@ const Blog = () => {
                       onClick={() => openModal(blog)}
                       className="text-[#FBC53F] hover:text-[#faaf18] font-medium"
                     >
-                      Read More →
+                      {t("read_more")} →
                     </button>
                   </div>
                 </div>

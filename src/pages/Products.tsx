@@ -1,59 +1,53 @@
 import { Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import "../i18n";
+import banner1 from "../Assets/kuri-banner-1.jpg";
+
+interface Product {
+  name: string;
+  description: string;
+  image: string;
+  benefits: string[]; // Ensure benefits is typed as an array of strings
+}
 
 const Products = () => {
-  const products = [
+  const { t } = useTranslation();
+  const products: Product[] = [
     {
-      name: "Anise Lactation Tea",
-      description:
-        "Boost your milk supply naturally with this refreshing blend of anise.",
+      name: t("anise_title"),
+      description: t("anise_description"),
       image:
         "https://goodeggs4.imgix.net/92599f79-3115-4f0f-94d7-86ba10ba96ff.jpg?w=840&h=525&fm=jpg&q=80&fit=crop",
-      benefits: [
-        "Natural ingredients",
-        "Proven effectiveness",
-        "Pleasant taste",
-      ],
+      benefits: t("anise_features", { returnObjects: true }) as string[],
     },
     {
-      name: "Mint Lactation Tea",
-      description: "A soothing blend to support your breastfeeding journey.",
+      name: t("mint_title"),
+      description: t("mint_description"),
       image:
         "https://assets.clevelandclinic.org/transform/11a964aa-8c62-441a-acbd-7b5b49358203/Milk-Supply-Supplements-869682138-967x544-1_jpg",
-      benefits: ["Refreshing flavor", "Digestive support", "Caffeine free"],
+      benefits: t("mint_features", { returnObjects: true }) as string[],
     },
     {
-      name: "Fenugreek Blend",
-      description: "Traditional herbs combined for maximum effectiveness.",
+      name: t("fenugreek_title"),
+      description: t("fenugreek_description"),
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDpWUDiCw3DqxKn_6B6WKsAOh001ymKb5E4Q&s",
-      benefits: [
-        "Enhanced milk production",
-        "Rich in nutrients",
-        "Carefully crafted formula",
-      ],
+      benefits: t("fenugreek_features", { returnObjects: true }) as string[],
     },
     {
-      name: "Lactation Cookies",
-      description: "Delicious cookies with galactagogues",
+      name: t("cookies_title"),
+      description: t("cookies_description"),
       image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
-      benefits: [
-        "Natural ingredients",
-        "Proven effectiveness",
-        "Pleasant taste",
-      ],
+      benefits: t("cookies_features", { returnObjects: true }) as string[],
     },
     {
-      name: "Breastfeeding Supplements",
-      description: "Essential nutrients for nursing mothers",
+      name: t("supplements_title"),
+      description: t("supplements_description"),
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
-      benefits: [
-        "Enhanced milk production",
-        "Rich in nutrients",
-        "Scientifically Formulated for Lactation Support",
-      ],
+      benefits: t("supplements_features", { returnObjects: true }) as string[],
     },
   ];
   return (
@@ -61,19 +55,16 @@ const Products = () => {
       {/* Hero Section */}
       <section className="relative h-[500px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1440"
+          src={banner1}
           alt="Mother and baby"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-fill"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold text-white mb-4 text-center">
-            Enhance Your Breastfeeding Journey with Our Natural Products
+            {t("product_description")}
           </h1>
-          <p className="text-xl text-white/90">
-            Carefully crafted with organic, research-backed ingredients for
-            effective results
-          </p>
+          <p className="text-xl text-white/90">{t("product_details")}</p>
         </div>
       </section>
       {/* Products Grid */}
@@ -93,11 +84,8 @@ const Products = () => {
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <ul className="space-y-2 mb-6">
-                  {product.benefits.map((benefit) => (
-                    <li
-                      key={benefit}
-                      className="flex items-center text-gray-600"
-                    >
+                  {product.benefits.map((benefit, index: number) => (
+                    <li key={index} className="flex items-center text-gray-600">
                       <Leaf className="w-4 h-4 mr-2 text-green-500" />
                       {benefit}
                     </li>
@@ -114,12 +102,10 @@ const Products = () => {
       {/* CTA Section */}
       <section className="bg-[#FFFAF0] py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold mb-6">
-            Ready to empower your breastfeeding journey?
-          </h2>
+          <h2 className="text-3xl font-semibold mb-6">{t("cta_title")}</h2>
           <Link to={"/contact-us"}>
             <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg">
-              Start Shopping
+              {t("cta_button")}
             </Button>
           </Link>
         </div>

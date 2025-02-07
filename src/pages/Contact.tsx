@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import axios from "axios";
+import "../i18n";
+import { useTranslation } from "react-i18next";
+import banner3 from "../assets/kuri-banner-3.jpg";
 
 const Contact = () => {
+  const { t } = useTranslation();
   // Form state
   const [formData, setFormData] = useState({
     name: "",
@@ -30,13 +34,13 @@ const Contact = () => {
         "https://kuri-backend-ub77.onrender.com/contact-us",
         formData
       ); // Replace with your API
-      setStatus({ success: true, message: "Message sent successfully!" });
+      setStatus({ success: true, message: t("success_message") });
       setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
     } catch (error) {
       console.error("Error sending message:", error);
       setStatus({
         success: false,
-        message: "Failed to send message. Try again later.",
+        message: t("error_message"),
       });
     }
   };
@@ -46,17 +50,17 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="relative h-[400px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&q=80&w=1440"
+          src={banner3}
           alt="Mother and baby"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-fill"
         />
         <div className="absolute pt-2 inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            We're Here to Support You Every Step of the Way
+          <h1 className="text-5xl font-bold text-white mb-4 text-center">
+            {t("hero_title")}
           </h1>
-          <p className="text-xl text-white/90">
-            Have questions? Need guidance? Let's connect!
+          <p className="text-xl text-white/90 text-center">
+            {t("hero_subtitle")}
           </p>
         </div>
       </section>
@@ -65,7 +69,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Contact Information */}
           <div>
-            <h2 className="text-3xl font-semibold mb-8">Get in Touch</h2>
+            <h2 className="text-3xl font-semibold mb-8">{t("get_in_touch")}</h2>
             <div className="space-y-6">
               <div className="flex items-center">
                 <Phone className="w-6 h-6 mr-4 text-gray-600" />
@@ -78,7 +82,7 @@ const Contact = () => {
               <div className="flex items-center">
                 <MessageCircle className="w-6 h-6 mr-4 text-gray-600" />
                 <button className="bg-[#104a52] text-white px-6 py-2 rounded-lg hover:bg-[#2D3648] transition-colors">
-                  Join Our Telegram Group
+                  {t("telegram_group")}
                 </button>
               </div>
             </div>
@@ -86,11 +90,13 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-2xl shadow-sm">
-            <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
+            <h2 className="text-2xl font-semibold mb-6">
+              {t("contact_form_title")}
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
+                  {t("name")}
                 </label>
                 <input
                   type="text"
@@ -103,7 +109,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email Address
+                  {t("email")}
                 </label>
                 <input
                   type="email"
@@ -116,7 +122,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Subject
+                  {t("subject")}
                 </label>
                 <input
                   type="text"
@@ -129,7 +135,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
+                  {t("message")}
                 </label>
                 <textarea
                   name="message"
@@ -144,7 +150,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-[#104a52] text-white py-3 rounded-lg hover:bg-[#2D3648] transition-colors"
               >
-                Send Message
+                {t("send_message")}
               </button>
             </form>
 
