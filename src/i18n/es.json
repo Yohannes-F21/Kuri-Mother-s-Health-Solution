@@ -1,0 +1,160 @@
+{
+  "welcome": "በኢትዮጲያ የመጀመሪያውን የጡት ወተት ምርትን የሚጨምር ኦርጋኒክ ፕሮዳክት አምራች ድርጅት",
+  "welcome_description": "እንኳን ወደ ኩሪ የእናቶች ጤና መፍትሄ በደህና መጡ ለወለዱ እናቶች ፤ የጡት ወተት ምርትን የሚጨምሩ  ኦርጋኒክ ፕሮዳክት ምርቶችን ፣ እናቶች ሌሎች እናቶችን የሚደግፉበት መድረክ ፣ የባለሙያዎችን ምክር እና ድጋፍ - ሁሉም በአንድ ቦታ እናቀርባለን።",
+  "welcome_btn": "የእናቶችን ማህበረሰብ ይቀላቀሉ",
+
+  "about_us": "ስለ እኛ",
+  "about_us_title": "በመላው አፍሪካ ያሉ እናቶችን ማበረታታት",
+  "about_us_description": "ኩሪ የእናቶች ጤና መፍትሄ፣ በኢትዮጲያ እንዲሁም በመላው አፍሪካ ላሉ እናቶች የጡት ማጥባት ልምድን ለማሳደግ የተቋቋመ ድርጅት ነው። እናቶች ከወለዱ በኋላ በጡት ማጥባት ጉዟቸው ላይ ለማበረታታት የጡት ወተት ምርትን የሚጨምሩ  ኦርጋኒክ ፕሮዳክት ምርቶችን፣የባለሙያዎችን ምክር እና የማህበረሰብ ድጋፍ እንሰጣለን።",
+
+  "mission": "ተልዕኮ",
+  "mission_description": "ተፈጥሯዊ መፍትሄዎችን በመጠቀም እና የታመነ ድጋፍን በመስጠት ለወለዱ እናቶች ጡት በማጥባት ጉዟቸው የተሳካ ውጤት እንዲያመጡ እና የእናቶችና የጨቅላ ህጻናት ጤና እንዲሻሻል ማድረግ ነው።",
+
+  "vision": "ራዕይ",
+  "vision_description": "በሚሊዮን ለሚቆጠሩ እናቶች የጡት ማጥባት ልምድን በማሳደግ በአፍሪካ ውስጥ የጡት ወተት ምርትን የሚጨምሩ  ኦርጋኒክ ፕሮዳክት ምርቶችን እና አገልግሎቶችን ቀዳሚ አቅራቢ መሆን።",
+
+  "why_choose_kuri": "ኩሪን ለምን ይምረጡ?",
+  "natural_products": "የተፈጥሮ ምርቶች",
+  "natural_products_description": "ኦርጋኒክ እና በሳይንስ የተረጋገጡ የጡት ወተት ምርትን የሚጨምሩ  ፕሮዳክት ምርቶችን ማቅረብ።",
+  "key_features": "የእኛ ቁልፍ ባህሪያት",
+
+  "peer_support": "እናቶች ሌሎች እናቶችን የሚደግፉበት መድረክ",
+  "peer_support_description": "እናቶች ሌሎች እናቶችን የሚደግፉበት መድረክ።",
+
+  "expert_guidance": "የባለሙያዎች ድጋፍ",
+  "expert_guidance_description": "ልምድ ባካበቱ ዶክተሮች እና ባለሙያዎች ማማከር።",
+
+  "trusted_community": "የታመነ ማህበረሰብ",
+  "trusted_community_description": "እናቶች ሳይሳቀቁ ሚስጥራቸውን የሚያካፍሉበት ማህበረሰብ።",
+
+  "meet_the_team": "ቡድናችንን ይጎብኙ",
+  "meet_the_team_description": "ቡድናችን በጤና ጥበቃ፣ የምግብ አቀራረብ እና ዲጂታል ኢኖቬሽን ዘርፍ የተሰማሩ የተነሳሳቱ ባለሙያዎችን ያካትታል። እኛ ለእናቶች የጡት ማጥባት ልምድን ለማሻሻል በተረጋጋ ጥናት የተደገፉ ተግባራዊ መፍትሄዎችን በማቅረብ ልምዳችንን እንደቀረበናል።",
+  "mahlet_kassahun": "ማህሌት ካሳሁን",
+  "mahlet_kassahun_role": "ተቋቋሚ እና ዋና ስራ አስኪያጅ (CEO)",
+  "mahlet_kassahun_description": "በምግብ ምርት ልማት ላይ የተሰማረች ልምድ አላት።",
+  "dr_eyerusalem_getu": "ዶ/ር ኢየሩሳሌም ጌቱ",
+  "dr_eyerusalem_getu_role": "ተቋቋሚ እና የስራ አስኪያጅ (COO)",
+  "dr_eyerusalem_getu_description": "ሀኪም፣ የጡት ምርት ስሜት ስሙኒያን",
+
+  "testimonial_text": "ኩሪ በጡት ማጥባት ጉዞዬ ውስጥ ህይወቴን የማዳን መንገድ ነበር። የሚሰጡት ድጋፍ እና ሀብት እጅግ ከፍተኛ እና ዋጋ ያለው ነው፣ እና በዚህ ግሩም ማህበረሰብ ውስጥ መሆኔን በጣም እጠናቀቃለሁ።",
+  "testimonial_author": "ሳራ ።",
+  "testimonial_author_description": "የሁለት ልጆች እናት",
+
+  "community_title": "የሚያድግ ማህበረሰባችንን ይቀላቀሉ",
+  "community_description": "የሚሳካ የጡት ማጥባት ጉዞ ላይ ያተኩረ የእናቶች እና የጤና ባለሙያዎች ድጋፍ የሚሰጥ መረብ ይሁኑ።",
+  "community_button": "ስለ ተልዕኳችን ዝርዝር ይውሰዱ",
+
+  "products_title": "ምርቶቻችን",
+  "products_description": "በተፈጥሮ ኦርጋኒክ ምርቶቻችን የጡት ማጥባት ጉዞዎን ያማረ ያድርጉ",
+  "products_subdescription": "በህክምና ሳይንስ ምርምር የተደገፈ ፤ ከተፈጥሮ ኦርጋኒክ ንጥረ ነገሮች በጥንቃቄ የተሰራ።",
+
+  "anise_title": "የአኒስ ሻይ",
+  "anise_description": "በዚህ መንፈስን በሚያድስ የአኒስ ድብልቅ የተፈጥሮ ሻይ በመጠቀም የጡት ወተት ምርትዎን ያሳድጉ።",
+  "anise_features": ["የተፈጥሮ ንጥረ ነገሮች", "ውጤታማነቱ የተረጋገጠ", "ደስ የሚል ጣዕም"],
+
+  "mint_title": "የሚንት ሻይ",
+  "mint_description": "የጡት ማጥባት ጉዞዎን ለመደገፍ የተዘጋጀ ድብልቅ።",
+  "mint_features": ["ቆንጆ ጣዕም", "የምግብ መፈጨት ድጋፍ", "ከካፌይን ነፃ"],
+
+  "fenugreek_title": "የአብሽ ሻይ",
+  "fenugreek_description": "በከፍተኛ ደረጃ የወተት ምርት ውጤታማነትን ለመጨመር የተዋሃዱ ባህላዊ ዕፅዋት።",
+  "fenugreek_features": ["ለተሻለ የጡት ወተት ምርት", "በንጥረ ነገሮች የበለፀገ", "በጥንቃቄ የተዘጋጀ"],
+
+  "cookies_title": "ኩኪስ",
+  "cookies_description": "የጡት ወተት ምርትን ከሚጨምሩ የተፈጥሮ ንጥረ ነገር ምግቦች የተዘጋጁ ኩኪሶች።",
+  "cookies_features": ["የተፈጥሮ ንጥረ ነገሮች", "ውጤታማነቱ በሳይንስ የተረጋገጠ", "ደስ የሚል ጣዕም"],
+
+  "supplements_title": "አጋዥ መድሃኒቶች",
+  "supplements_description": "ለሚያጠቡ እናቶች ከአስፈላጊ ንጥረ ነገሮች የተዘጋጀ መድሃኒት",
+  "supplements_features": [
+    "የተሻሻለ ወተት ለምረት",
+    "በንጥረ ነገሮች የበለፀገ",
+    "በህክምና ሳይንስ የተዘጋጀ"
+  ],
+  "shop_btn": "አሁኑኑ ይዘዙ",
+
+  "testimonial_title": "እናቶች ምን ይላሉ",
+  "quote_bet": "የKuri የጡት ማጥባት ሻይ ለእኔ ትልቅ ልዩነት አድርጓል። የጡት ወተት ምርትዬ ጨመረ፣ እና በማጥባት ጊዜ ተዘናግቻለሁ።",
+  "author_bet": "- ቤተልሄም T.",
+  "location_bet": "አዲስ አበባ",
+
+  "quote_hel": "ከጡት ወተት እንደገና በማስተካከይ ተቸግሬ ነበር፣ ነገር ግን የKuri ሻይን ከጠቀምኩ በኋላ ምርትዬ እየተሻሻለ አስተዋል። በጣም እንመካለን!",
+  "author_hel": "- ሄሌን G.",
+  "location_hel": "ናይሮቢ",
+
+  "quote_ami": "ድንቅ ሻይ! በጡት ማጥባት ጊዜ ተዘናግቻለሁ፣ ልጄም ደስተኛ መሆኑን አስተዋል።",
+  "author_ami": "- አሚና K.",
+  "location_ami": "ላጎስ",
+
+  "join_community": "የእናቶችን ማህበረሰብ ይቀላቀሉ",
+  "join_description": "በኩሪ የእናት ጤና መፍትሄ እኛ የእናትነት አጋርሽ ነን። ማህበረሰባችንን ይቀላቀሉ እና በጡት ማጥባት ጉዞዎ ውስጥ ያሳድጉ!",
+  "join_telegram": "የቴሌግራም ግሩፕ ይቀላቀሉ",
+
+  "product_title": "ምርቶቻችን",
+  "product_description": "በተፈጥሮ ኦርጋኒክ ምርቶቻችን የጡት ማጥባት ጉዞዎን ያማረ ያድርጉ",
+  "product_details": "በህክምና ሳይንስ ምርምር የተደገፈ ፤ ከተፈጥሮ ኦርጋኒክ ንጥረ ነገሮች በጥንቃቄ የተሰራ።",
+
+  "cta_title": "የጡት ማጥባት ጉዞዎን ለማጎልበት ዝግጁ ነዎት?",
+  "cta_button": "ግዢ ይጀምሩ",
+
+  "services_title": "አገልግሎቶቻችን",
+  "digital_platform_title": "የዲጂታል መድረክ",
+  "digital_platform_description": "የእኛ ዲጂታል መድረክ እናቶች ከወለዱ በኋላ ባላቸው የጡት ማጥባት ጉዞ ላይ ከፕሮዳክቶቻችን በተጨማሪ የማማከር እና ድጋፍ መስጠት ላይ ትኩረት ያደርጋል።",
+  "features_title": "በውስጡ የሚያካትተውም ፦",
+  "peer_support_title": "እናቶች ሌሎች እናቶችን የሚደግፉበት መድረክ",
+  "peer_support_description2": "እናቶች ከወሊድ በኋላ ልዩ ልምዶቻቸውን የሚያካፈሉበት ፣ የሚወያዪበት እና እርስ በእርስ ይሚማማሩበት መድረክ። የእናቶች ማህበረሰብን ይቀላቀሉ።",
+  "expert_guidance_title": "የባለሙያዎች ድጋፍ",
+  "expert_guidance_description2": "በዚህ ዘርፍ ልምድ ካካበቱ ዶክተሮች እና ባለሙያዎች ምክር ማግኘት። ማንኛውንም ጥያቄ ለመጠየቅ ወይም የበለጠ መረጃ ለማግኘት ያማክሩ።",
+  "book_btn": "ቀጠሮ ያስይዙ",
+  "trusted_community_title": "የታመነ ማህበረሰብ",
+  "trusted_community_description2": "እናቶች ሳይሳቀቁ ሚስጥራቸውን የሚያካፍሉበት መድረክ።",
+  "testimonials_title": "ምስክርነቶች",
+  "testimonial_1": "“ የኩሪን ለሚያጠቡ እናቶች የተዘጋጀ ሻይ መጠቀም ከጀመርኩኝ በኋላ በጡት ወተት ምርቴ ላይ በጣም መሻሻል አይቼበታለሁ።”",
+  "testimonial_author_1": "አንዲት እናት ከአዲስ አበባ",
+
+  "breastfeeding_nutrition_guidance": "የጡት ማጥባት እና ምግብ መመሪያ",
+  "breastfeeding_nutrition_description": "ስለ ትክክለኛው የማጥባት እርድ፣ የሕፃኑ ምግብ እና የጡት ወተት አያያዝ የባለሙያ የተደገፉ ምክሮችን ይድረሱ።",
+  "learn_more": "ተጨማሪ ይማሩ",
+  "start_motherhood_journey": " የእናትነት ጉዞዎን ዛሬ ይጀምሩ",
+  "join_successful_mothers": "በኩሪ የድጋፍ ሥርዓት ስኬትን ያገኙ ሺ እናቶችን ይቀላቀሉ።",
+  "join_support_group": "የእናቶች ድጋፍ ቡድናችንን ይቀላቀሉ",
+  "blog": "ብሎግ",
+  "blog_title": "ኩሪ ብሎግ፡ ልዩ መረጃዎች ስለ የጡት ማጥባት እና እናትነት",
+  "blog_description": "እናቶችን በእውቀት ማስበረታታት፣ አንድ መጣጥፍ በአንድ ጊዜ።",
+  "search_placeholder": "ጽሑፎችን በጉዳይ፣ ቁልፍ ቃል፣ ወይም ቀን ይፈልጉ...",
+  "featured_article": "የተለየ ጽሑፍ",
+  "read_more": "ተጨማሪ ያንብቡ",
+  "no_blogs_found": "ምንም ብሎግ አልተገኘም። እባኮትን በሌላ የፍለጋ ቃል ይሞክሩ!",
+  "close_article": "ዝጋ",
+
+  "contact_us": "ያግኙን",
+  "hero_title": "እያንዳንዱ ደረጃ ለመርዳት እንዘጋጃለን",
+  "hero_subtitle": "ጥያቄዎች አሉዎት? መርጃ ይፈልጋሉ? እንገናኝ!",
+  "get_in_touch": "ያግኙን",
+  "phone": "ስልክ",
+  "email": "ኢሜይል አድራሻ",
+  "telegram_group": "የቴሌግራም ቡድናችንን ይቀላቀሉ",
+  "contact_form_title": "መልእክት ይላኩልን",
+  "name": "ስም",
+  "email_placeholder": "ኢሜይልዎን ያስገቡ",
+  "subject": "ርዕስ",
+  "message": "መልእክት",
+  "send_message": "መልእክት ላክ",
+  "success_message": "መልእክትዎ በተሳካ ሁኔታ ተልኳል!",
+  "error_message": "የሆነ ችግር አጋጥሟል። እባኮትን እንደገና ይሞክሩ።",
+
+  "brand_name": "ኩሪ",
+  "brand_description": "በኢትዮጲያ የመጀመሪያውን የጡት ወተት ምርትን የሚጨምር ኦርጋኒክ ፕሮዳክት አምራች ድርጅት",
+  "quick_links": "ፈጣን ማስታወሻዎች",
+
+  "products": "ምርቶች",
+
+  "contact": "አግኙን",
+  "contact_section": "አግኙን",
+  "address": "አዲስ አበባ፣ ኢትዮጵያ",
+
+  "follow_us": "ይከተሉን",
+  "copyright": "© 2025 የኩሪ የእናቶች ጤና መፍትሄ። ሁሉም መብቶች የተጠበቁ ናቸው።",
+  "en_am": "አማ",
+  "choose_language": "ቋንቋ ምረጥ"
+}

@@ -4,8 +4,20 @@ import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 // import GoogleTranslate from "./GoogleTranslate";
 import logo from "../Assets/Kuri Logo.png";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import "../i18n";
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
+  const navbarContent = [
+    t("about_us"),
+    t("products_title"),
+    t("services_title"),
+    t("blog"),
+    t("contact_us"),
+  ];
   // the following code is for the google translator
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +37,7 @@ const Navbar = () => {
   }, [menuRef]);
 
   return (
-    <nav className="fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm">
+    <nav className="fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-2">
@@ -48,13 +60,7 @@ const Navbar = () => {
             </div> */}
           </div>
           <div className="hidden md:flex items-center space-x-1">
-            {[
-              "About",
-              "Our Products",
-              "Our Services",
-              "Blogs",
-              "Contact Us",
-            ].map((item) => (
+            {navbarContent.map((item) => (
               <NavLink
                 key={item}
                 to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -74,6 +80,7 @@ const Navbar = () => {
               Join Community
             </Button> */}
             {/* <GoogleTranslate></GoogleTranslate> */}
+            <LanguageSwitcher></LanguageSwitcher>
           </div>
           <div className="md:hidden">
             <button
@@ -91,7 +98,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div ref={menuRef} className="md:hidden pb-4 px-4">
             <div className="flex flex-col space-y-2">
-              {["About", "Our Products", "Blogs", "Contact Us"].map((item) => (
+              {navbarContent.map((item) => (
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <NavLink
                     key={item}

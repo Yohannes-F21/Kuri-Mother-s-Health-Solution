@@ -1,4 +1,6 @@
 import { X } from "lucide-react";
+import "../i18n";
+import { useTranslation } from "react-i18next";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -29,6 +31,7 @@ const Modal = ({
   created,
   img,
 }: ModalProps) => {
+  const { t } = useTranslation();
   if (!isOpen) return null;
   return (
     <div
@@ -73,7 +76,7 @@ const Modal = ({
               onClick={onClose}
               className=" text-white px-6 py-2 rounded-full bg-[#104a52] hover:bg-[#2D3648] transition-colors"
             >
-              Close Article
+              {t("close_article")}
             </button>
           </div>
         </div>

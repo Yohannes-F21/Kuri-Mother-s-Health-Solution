@@ -1,0 +1,174 @@
+{
+  "welcome": "The first lactation support platform in Ethiopia",
+  "welcome_description": "Welcome to Kuri Mother’s Health Solution where we offer lactation products, peer-to-peer support, expert guidance, and a trusted community—all in one place for breastfeeding mothers.",
+  "welcome_btn": "Join Our Community",
+
+  "about_us": "About Us",
+  "about_us_title": "Empowering Mothers Across Africa",
+  "about_us_description": "At Kuri Mother’s Health Solution, we are dedicated to enhancing the breastfeeding experience for mothers across Africa. We provide natural lactation products, expert guidance, and community support to empower mothers on their breastfeeding journey.",
+
+  "mission": "Our Mission",
+  "mission_description": "To provide mothers with effective, natural solutions and trusted support, enabling them to achieve successful breastfeeding and improve maternal and infant health.",
+
+  "vision": "Our Vision",
+  "vision_description": "To become the leading provider of lactation support products and services in Africa, enhancing the breastfeeding experience for millions of mothers.",
+  "key_features": " Our Key Features",
+
+  "why_choose_kuri": "Why Choose Kuri?",
+  "natural_products": "Natural Products",
+  "natural_products_description": "Supply organic and scientifically proven lactation support products.",
+
+  "peer_support": "Peer Support",
+  "peer_support_description": "Connect with other mothers.",
+
+  "expert_guidance": "Expert Guidance",
+  "expert_guidance_description": "Professional lactation consultants.",
+
+  "trusted_community": "Trusted Community",
+  "trusted_community_description": "Safe space for mothers.",
+
+  "meet_the_team": "Meet the Team",
+  "meet_the_team_description": "Our team is made up of passionate experts with backgrounds in healthcare, nutrition, and digital innovation. We are dedicated to improving the breastfeeding experience for mothers everywhere by providing practical, research-based solutions.",
+  "mahlet_kassahun": "Mahlet Kassahun",
+  "mahlet_kassahun_role": "Co-founder and CEO",
+  "mahlet_kassahun_description": "Expertise in food product development.",
+  "dr_eyerusalem_getu": "Dr. Eyerusalem Getu",
+  "dr_eyerusalem_getu_role": "Co-founder and COO",
+  "dr_eyerusalem_getu_description": "Medical Doctor, Lactation Biologist",
+
+  "testimonial_text": "Kuri has been a lifesaver in my breastfeeding journey. The support and resources they provide are invaluable, and I'm so grateful to be part of this amazing community.",
+  "testimonial_author": "Sarah M.",
+  "testimonial_author_description": "Mother of two",
+
+  "community_title": "Join Our Growing Community",
+  "community_description": "Be part of a supportive network of mothers and healthcare professionals dedicated to successful breastfeeding journeys.",
+  "community_button": "Learn More About Our Mission",
+
+  "products_title": "Our Products",
+  "products_description": "Enhance Your Breastfeeding Journey with Our Organic Products",
+  "products_subdescription": "Carefully crafted with organic, research-backed ingredients for effective results.",
+
+  "anise_title": "Anise Lactation Tea",
+  "anise_description": "Boost your milk supply naturally with this refreshing blend of anise.",
+  "anise_features": [
+    "Natural ingredients",
+    "Proven effectiveness",
+    "Pleasant taste"
+  ],
+
+  "mint_title": "Mint Lactation Tea",
+  "mint_description": "A soothing blend to support your breastfeeding journey.",
+  "mint_features": ["Refreshing flavor", "Digestive support", "Caffeine free"],
+
+  "fenugreek_title": "Fenugreek Blend",
+  "fenugreek_description": "Traditional herbs combined for maximum effectiveness.",
+  "fenugreek_features": [
+    "Enhanced milk production",
+    "Rich in nutrients",
+    "Carefully crafted formula"
+  ],
+
+  "cookies_title": "Lactation Cookies",
+  "cookies_description": "Delicious cookies with galactagogues",
+  "cookies_features": [
+    "Natural ingredients",
+    "Proven effectiveness",
+    "Pleasant taste"
+  ],
+
+  "supplements_title": "Breastfeeding Supplements",
+  "supplements_description": "Essential nutrients for nursing mothers",
+  "supplements_features": [
+    "Enhanced milk production",
+    "Rich in nutrients",
+    "Scientifically Formulated for Lactation Support"
+  ],
+
+  "shop_btn": "Shop Now",
+
+  "testimonial_title": "What Mothers Say",
+  "quote_bet": "Kuri's lactation tea has made a huge difference for me. My milk supply increased, and I felt more relaxed during feeding times.",
+  "author_bet": "- Bethlehem T.",
+  "location_bet": "Addis Ababa",
+
+  "quote_hel": "I was struggling with low milk supply, but after using Kuri, I noticed a big improvement. Highly recommended!",
+  "author_hel": "- Helen G.",
+  "location_hel": "Nairobi",
+
+  "quote_ami": "Amazing tea! It helped me feel more at ease during breastfeeding, and my baby seems happier too.",
+  "author_ami": "- Amina K.",
+  "location_ami": "Lagos",
+
+  "join_community": "Join Our Community",
+  "join_description": "At Kuri Mother's Health Solution, we're your partner in motherhood. Join our community and thrive in your breastfeeding journey!",
+  "join_telegram": "Join the Conversation on Telegram",
+
+  "product_title": "Our Products",
+  "product_description": "Enhance Your Breastfeeding Journey with Our Organic Products",
+  "product_details": "Carefully crafted with organic, research-backed ingredients for effective results.",
+
+  "cta_title": "Ready to empower your breastfeeding journey?",
+  "cta_button": "Start Shopping",
+
+  "services_title": "Our Services",
+  "digital_platform_title": "Digital Platform",
+  "digital_platform_description": "Our digital platform complements our products by providing mothers with a comprehensive support system tailored to their breastfeeding needs.",
+  "features_title": "Features:",
+  "peer_support_title": "Peer-Support Network",
+  "peer_support_description2": "Connect with other mothers where mothers share their unique postpartal experiences and encouragement. Join our Telegram group to become part of the community.",
+  "expert_guidance_title": "Expert Guidance",
+  "expert_guidance_description2": "Access consultations with lactation consultants, pediatricians, and maternal health experts. Participate in Q&A sessions for practical advice.",
+  "book_btn": "Book a Session",
+  "trusted_community_title": "Trusted Community",
+  "trusted_community_description2": "A safe space where mothers can find guidance and companionship.",
+  "testimonials_title": "Testimonials",
+  "testimonial_1": "“Kuri’s lactation tea has made a huge difference for me. My milk supply increased, and I felt more relaxed during feeding times.”",
+  "testimonial_author_1": "A Mother from Addis Ababa",
+
+  "breastfeeding_nutrition_guidance": "Breastfeeding & Nutrition Guidance",
+  "breastfeeding_nutrition_description": "Access expert-backed resources about proper lactation diets, baby nutrition, and milk supply management.",
+  "learn_more": "Learn More",
+  "start_motherhood_journey": "Start Your Supported Motherhood Journey Today",
+  "join_successful_mothers": "Join thousands of mothers who have found success with Kuri's support system.",
+  "join_support_group": "Join Our Support Group",
+
+  "blog": "Blogs",
+  "blog_title": "Kuri Blog: Latest Insights on Breastfeeding and Motherhood",
+  "blog_description": "Empowering mothers with knowledge, one article at a time.",
+  "search_placeholder": "Search articles by topic, keyword, or date...",
+  "featured_article": "Featured Article",
+  "read_more": "Read More",
+  "no_blogs_found": "No blogs found. Please try a different search term!",
+  "close_article": "Close Article",
+
+  "contact_us": "Contact Us",
+  "hero_title": "We're Here to Support You Every Step of the Way",
+  "hero_subtitle": "Have questions? Need guidance? Let's connect!",
+  "get_in_touch": "Get in Touch",
+  "phone": "Phone",
+  "email": "Email Address",
+  "telegram_group": "Join Our Telegram Group",
+  "contact_form_title": "Send us a Message",
+  "name": "Name",
+  "email_placeholder": "Enter your email",
+  "subject": "Subject",
+  "message": "Message",
+  "send_message": "Send Message",
+  "success_message": "Your message has been sent successfully!",
+  "error_message": "Something went wrong. Please try again.",
+
+  "brand_name": "Kuri",
+  "brand_description": "Ethiopia's first lactation support platform",
+  "quick_links": "Quick Links",
+
+  "products": "Products",
+
+  "contact": "Contact",
+  "contact_section": "Contact",
+  "address": "Addis Ababa, Ethiopia",
+
+  "follow_us": "Follow Us",
+  "copyright": "© 2025 Kuri Mother's Health Solution. All rights reserved.",
+  "en_am": "ENG",
+  "choose_language": "Choose Language"
+}
