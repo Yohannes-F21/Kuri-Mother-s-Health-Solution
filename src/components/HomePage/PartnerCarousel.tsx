@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import partner1 from "../../Assets/partners/hh.png";
+import partner2 from "../../Assets/partners/RWANDA.png";
+import partner3 from "../../Assets/partners/Ithiel.png";
+import partner4 from "../../Assets/partners/IMG_0610.jpg";
 
 const PartnerCarousel = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="w-full overflow-hidden relative">
+    <div className="w-full overflow-hidden relative ">
       <div
         className="flex items-center  py-4 overflow-hidden"
         onMouseEnter={() => setIsHovered(true)}
@@ -20,28 +24,23 @@ const PartnerCarousel = () => {
           {[...Array(4)].map((_, index) => (
             <React.Fragment key={index}>
               <img
-                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
+                src={partner1}
                 alt="Partner 1"
-                className="h-12 w-auto inline-block"
+                className="h-20 w-40 inline-block scale-125"
               />
               <img
-                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
+                src={partner2}
                 alt="Partner 2"
-                className="h-12 w-auto inline-block"
+                className="h-20  inline-block scale-150"
               />
               <img
-                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
+                src={partner3}
                 alt="Partner 3"
-                className="h-12 w-auto inline-block"
+                className="h-20 w-40 inline-block scale-125"
               />
               <img
-                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
+                src={partner4}
                 alt="Partner 4"
-                className="h-12 w-auto inline-block"
-              />
-              <img
-                src="https://www.parsipediatrics.com/wp-content/uploads/2021/12/breast-feeding.jpg"
-                alt="Partner 5"
                 className="h-12 w-auto inline-block"
               />
             </React.Fragment>

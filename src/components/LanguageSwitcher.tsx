@@ -20,7 +20,7 @@ const LanguageSwitcher = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="px-3 py-0 border-none shadow-md rounded-lg"
+          className="px-3 py-0 border-none rounded-lg bg-[#104A52] text-white hover:bg-[#104A52] hover:text-[#faaf18] transition-colors"
         >
           {t("en_am")}{" "}
           <span>
@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
           </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="">
         <DropdownMenuLabel>{t("choose_language")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -36,7 +36,7 @@ const LanguageSwitcher = () => {
             <button onClick={() => i18n.changeLanguage("en")}>English</button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <button onClick={() => i18n.changeLanguage("es")}>አማረኛ</button>
+            <button onClick={() => i18n.changeLanguage("es")}>አማርኛ</button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

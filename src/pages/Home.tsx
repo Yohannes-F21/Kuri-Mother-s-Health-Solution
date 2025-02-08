@@ -54,14 +54,13 @@ const Home = () => {
     const interval = setInterval(nextTestimonial, 5000);
     return () => clearInterval(interval);
   }, []);
-  //   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="w-full min-h-screen bg-[#FAF7EB]">
+    <div className="w-full  min-h-screen ">
       <section className=" p-4 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-5">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-5">
             <div className="flex-1 space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold text-[#104a52] leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-4xl font-bold text-[#104a52] leading-tight">
                 {t("welcome")}
               </h1>
               <p className="text-xl font-semibold ">
@@ -83,7 +82,7 @@ const Home = () => {
         </div>
       </section>
       <section className="mb-10"></section>
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FAF7EB]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center mb-12">
             {t("key_features")}
@@ -174,7 +173,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FFE5D9]/20 flex gap-2 items-center justify-center">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FAF7EB] flex gap-2 items-center justify-center">
         <button
           onClick={prevTestimonial}
           className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
@@ -213,7 +212,7 @@ const Home = () => {
           <ChevronRight className="h-6 w-6 text-gray-700" />
         </button>
       </section>
-      <section className="mb-10">
+      <section className="">
         <PartnerCarousel />
       </section>
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#2D3748] text-white">

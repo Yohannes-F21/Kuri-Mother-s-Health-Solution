@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 // import GoogleTranslate from "./GoogleTranslate";
-import logo from "../Assets/Kuri Logo.png";
+import logo from "../Assets/k-logo1.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import "../i18n";
@@ -37,29 +37,20 @@ const Navbar = () => {
   }, [menuRef]);
 
   return (
-    <nav className="fixed top-0 w-full bg-[#faf7eb]/50 backdrop-blur-sm z-50 border-b shadow-sm ">
+    <nav className="fixed top-0 w-full bg-[#104A52] backdrop-blur-sm z-50  shadow-sm ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center space-x-2">
-            <div className="logo ">
-              <NavLink to={"/"}>
-                <img
-                  src={logo}
-                  alt="Kuri Social Media Profile"
-                  className="w-14 h-10 object-fill"
-                />
-              </NavLink>
-            </div>
-            {/* <div>
-              <NavLink
-                to="/"
-                className="text-2xl font-semibold text-[#2D3748] tracking-tight hover:text-[#F43F5E] transition-colors duration-200"
-              >
-                Kuri
-              </NavLink>
-            </div> */}
+          <div className="logo w-[60%] md:w-[30%] ">
+            <NavLink to={"/"}>
+              <img
+                src={logo}
+                alt="Kuri Social Media Profile"
+                className="w-[30%] h-[30%] object-fill"
+              />
+            </NavLink>
           </div>
-          <div className="hidden md:flex items-center space-x-1">
+
+          <div className="hidden lg:flex items-center space-x-1">
             {navbarContent.map((item) => (
               <NavLink
                 key={item}
@@ -67,8 +58,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-white bg-[#104A52]"
-                      : "text-[#104A52] hover:text-white hover:bg-[#104A52]"
+                      ? "text-[#faaf18]  "
+                      : "text-white hover:text-[#faaf18] hover:underline"
                   }`
                 }
               >
@@ -80,12 +71,16 @@ const Navbar = () => {
               Join Community
             </Button> */}
             {/* <GoogleTranslate></GoogleTranslate> */}
-            <LanguageSwitcher></LanguageSwitcher>
+            <LanguageSwitcher />
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
+            <LanguageSwitcher />
+          </div>
+
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
+              className="p-2 rounded-lg text-white hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -96,7 +91,7 @@ const Navbar = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div ref={menuRef} className="md:hidden pb-4 px-4">
+          <div ref={menuRef} className="lg:hidden pb-4 px-4">
             <div className="flex flex-col space-y-2">
               {navbarContent.map((item) => (
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -106,8 +101,8 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                         isActive
-                          ? "text-gray-900 bg-[#FFE5D9]/75"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-[#FFE5D9]/50"
+                          ? "text-[#faaf18]  "
+                          : "text-white hover:text-[#faaf18] hover:underline"
                       }`
                     }
                   >
