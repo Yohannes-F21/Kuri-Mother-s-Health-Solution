@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PartnerCarousel from "@/components/HomePage/PartnerCarousel";
 import { useTranslation } from "react-i18next";

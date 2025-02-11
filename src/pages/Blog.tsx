@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search } from "lucide-react";
 import Modal from "../components/Modal";
 import { useLoaderData } from "react-router-dom";
@@ -22,7 +22,7 @@ export const loader = async (): Promise<{ blogs: Blog[] }> => {
 const Blog = () => {
   const { t } = useTranslation();
   const { blogs } = useLoaderData() as { blogs: Blog[] };
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [modalContent, setModalContent] = useState<{
     isOpen: boolean;
