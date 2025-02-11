@@ -38,25 +38,6 @@ const Blog = () => {
     img: "",
   });
 
-  useEffect(() => {
-    if (blogs.length > 0) setLoading(false);
-  }, [blogs]);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-lg font-semibold">Loading blogs...</p>
-        <div className="flex justify-center items-center h-screen">
-          <div className="">
-            <div className="w-8 h-8 bg-[#104A52] rounded-full"></div>
-            <div className="w-8 h-8 bg-[#104A52] rounded-full  animate-ping"></div>
-            <div className="w-8 h-8 bg-[#104A52] rounded-full  animate-pulse"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   const openModal = (blog: Blog) => {
     setModalContent({
       isOpen: true,

@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[400px] w-full overflow-hidden">
+      <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
           src={banImg}
           alt="Mother and baby"
@@ -82,9 +82,11 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <MessageCircle className="w-6 h-6 mr-4 text-gray-600" />
-                <button className="bg-[#104a52] text-white px-6 py-2 rounded-lg hover:bg-[#2D3648] transition-colors">
-                  {t("telegram_group")}
-                </button>
+                <a href="https://t.me/kuri_mother">
+                  <button className="bg-[#104a52] text-white px-6 py-2 rounded-lg hover:bg-[#2D3648] transition-colors">
+                    {t("telegram_group")}
+                  </button>
+                </a>
               </div>
             </div>
           </div>

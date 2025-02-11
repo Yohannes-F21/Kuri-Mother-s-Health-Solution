@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
-import banner1 from "../Assets/kuri-banner-1.jpg";
+import banner1 from "../Assets/kuri-banner.jpg";
 
 interface Product {
   name: string;
@@ -53,7 +53,7 @@ const Products = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[500px] w-full overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
           src={banner1}
           alt="Mother and baby"

@@ -1,6 +1,7 @@
 import { Heart, Leaf, Users, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Hero from "@/components/AboutPage/Hero";
+// import Hero from "@/components/AboutPage/Hero";
+import image from "../Assets/kuri-about.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
@@ -30,23 +31,7 @@ const About = () => {
       description: t("trusted_community_description"),
     },
   ];
-  const team = [
-    {
-      name: t("mahlet_kassahun"),
-      role: t("mahlet_kassahun_role"),
-      description: t("mahlet_kassahun_description"),
-      image:
-        "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80",
-    },
-    {
-      name: t("dr_eyerusalem_getu"),
-      role: t("dr_eyerusalem_getu_role"),
-      description: t("dr_eyerusalem_getu_description"),
 
-      image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80",
-    },
-  ];
   return (
     <div className="w-full min-h-screen bg-white">
       <section className="  w-full py-20">
@@ -59,16 +44,22 @@ const About = () => {
               <p className="text-lg text-gray-800 mb-8">
                 {t("about_us_description")}
               </p>
-              <Link to={"/contact-us"}>
-                <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg group">
-                  <Link to={"/contact-us"}>{t("welcome_btn")}</Link>
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-2" />
-                </Button>
-              </Link>
+
+              <Button className="bg-[#104a52] text-white hover:bg-[#2D3648] px-8 py-6 text-lg group">
+                <a href="https://t.me/kurimother">{t("welcome_btn")}</a>
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-2" />
+              </Button>
             </div>
             <div className="flex-1">
               <div className="hidden md:flex">
-                <Hero />
+                {/* <Hero /> */}
+                <div>
+                  <img
+                    src={image}
+                    alt="about"
+                    className="w-[450px] h-[500px] rounded-e-3xl object-cover"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -106,28 +97,8 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center mb-12">
-            {t("meet_the_team")}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="font-semibold mb-1">{member.name}</h3>
-                <p className="text-[#104a52] mb-2">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="w-full bg-[#faf7eb] py-20">
+      {/* place for our team */}
+      <section className="w-full  py-20">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="text-5xl text-[#faaf18] mb-6">"</div>
           <p className="text-xl text-gray-600 mb-8">{t(`testimonial_text`)}</p>
@@ -146,7 +117,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-20">
+      <section className="w-full py-20 bg-[#faf7eb]">
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold mb-6">
             {t("community_title")}

@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import { loader as blogLoader } from "./pages/Blog";
+
 const HydrateFallback = () => (
   <div className="flex items-center justify-center h-screen">
     <p>Loading...</p>

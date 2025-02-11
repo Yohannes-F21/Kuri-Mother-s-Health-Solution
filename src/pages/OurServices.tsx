@@ -9,7 +9,7 @@ function OurServices() {
   const { t } = useTranslation();
   return (
     <div className="w-full min-h-screen bg-white">
-      <section className="relative h-[500px] w-full overflow-hidden">
+      <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
           src={banner2}
           alt="Mother and baby"
@@ -36,10 +36,13 @@ function OurServices() {
               <p className="text-[#4A5568] mb-6">
                 {t("expert_guidance_description2")}
               </p>
-              <button className="inline-flex items-center px-6 py-3 bg-[#E68EA3] text-white rounded-full hover:bg-[#d47a91] transition-colors">
-                {t("book_btn")}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </button>
+              <a href="https://t.me/kurimother">
+                <button className="inline-flex items-center px-6 py-3 bg-[#E68EA3] text-white rounded-full hover:bg-[#d47a91] transition-colors">
+                  {t("book_btn")}
+
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </button>
+              </a>
             </div>
             <div className="p-8 rounded-2xl bg-[#F0F7FF] transition-transform hover:scale-[1.02]">
               <HugeiconsPeerToPeer02 className="w-12 h-12 text-[#7EB6FF] mb-4" />
@@ -64,10 +67,12 @@ function OurServices() {
               <p className="text-[#4A5568] mb-6">
                 {t("breastfeeding_nutrition_description")}
               </p>
-              <button className="inline-flex items-center px-6 py-3 bg-[#8BC34A] text-white rounded-full hover:bg-[#7baf3d] transition-colors">
-                {t("learn_more")}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </button>
+              <a href="https://t.me/kurimother">
+                <button className="inline-flex items-center px-6 py-3 bg-[#8BC34A] text-white rounded-full hover:bg-[#7baf3d] transition-colors">
+                  {t("learn_more")}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </button>
+              </a>
             </div>
             <div className="p-8 rounded-2xl bg-[#FFF5F5] transition-transform hover:scale-[1.02]">
               <Users className="w-12 h-12 text-[#FF8A80] mb-4" />
@@ -77,10 +82,12 @@ function OurServices() {
               <p className="text-[#4A5568] mb-6">
                 {t("trusted_community_description2")}
               </p>
-              <button className="inline-flex items-center px-6 py-3 bg-[#FF8A80] text-white rounded-full hover:bg-[#ff7567] transition-colors">
-                {t("join_community")}
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </button>
+              <a href="https://t.me/kurimother">
+                <button className="inline-flex items-center px-6 py-3 bg-[#FF8A80] text-white rounded-full hover:bg-[#ff7567] transition-colors">
+                  {t("join_community")}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </button>
+              </a>
             </div>
           </div>
         </div>
