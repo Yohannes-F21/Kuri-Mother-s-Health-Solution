@@ -4,7 +4,7 @@ import axios from "axios";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 // import banner3 from "../assets/kuri-banner-3.jpg";
-import banImg from "../Assets/kuri-banner-3.jpg";
+// import banImg from "../Assets/kuri-banner-3.jpg";
 
 const Contact = () => {
   const { t } = useTranslation();

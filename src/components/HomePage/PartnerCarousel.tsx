@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import partner1 from "../../Assets/partners/hh.png";
 import partner2 from "../../Assets/partners/RWANDA.png";
-import partner3 from "../../Assets/partners/Ithiel.png";
 import partner4 from "../../Assets/partners/IMG_0610.jpg";
 import "../../i18n";
 import { t } from "i18next";
