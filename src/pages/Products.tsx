@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
-import banner1 from "../Assets/kuri-banner.jpg";
+import BannerCarousel from "@/components/ProductsPage/BannerCarousel";
 
 interface Product {
   name: string;
@@ -53,7 +53,7 @@ const Products = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
+      {/* <section className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
           src={banner1}
           alt="Mother and baby"
@@ -68,7 +68,8 @@ const Products = () => {
             {t("product_details")}
           </p>
         </div>
-      </section>
+      </section> */}
+      <BannerCarousel></BannerCarousel>
       {/* Products Grid */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

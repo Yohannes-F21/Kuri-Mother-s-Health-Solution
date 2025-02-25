@@ -3,7 +3,10 @@ import { RiGuideLine } from "../components/GuidanceIcon";
 import { HugeiconsPeerToPeer02 } from "../components/PeerNetworkIcon";
 import "../i18n";
 import { useTranslation } from "react-i18next";
-import banner2 from "../Assets/kuri-banner-2.jpeg";
+// import banner2 from "../Assets/kuri-banner-2.jpeg";
+import banner1 from "../Assets/doctors.png";
+import { NavLink } from "react-router-dom";
+import Testimonials from "@/components/Testimonials";
 
 function OurServices() {
   const { t } = useTranslation();
@@ -11,7 +14,7 @@ function OurServices() {
     <div className="w-full min-h-screen bg-white">
       <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
-          src={banner2}
+          src={banner1}
           alt="Mother and baby"
           className="absolute inset-0 w-full h-full object-fill"
         />
@@ -36,13 +39,13 @@ function OurServices() {
               <p className="text-[#4A5568] mb-6">
                 {t("expert_guidance_description2")}
               </p>
-              <a href="https://t.me/kurimother">
+              <NavLink to={"/contact-us"}>
                 <button className="inline-flex items-center px-6 py-3 bg-[#E68EA3] text-white rounded-full hover:bg-[#d47a91] transition-colors">
                   {t("book_btn")}
 
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
-              </a>
+              </NavLink>
             </div>
             <div className="p-8 rounded-2xl bg-[#F0F7FF] transition-transform hover:scale-[1.02]">
               <HugeiconsPeerToPeer02 className="w-12 h-12 text-[#7EB6FF] mb-4" />
@@ -67,12 +70,12 @@ function OurServices() {
               <p className="text-[#4A5568] mb-6">
                 {t("breastfeeding_nutrition_description")}
               </p>
-              <a href="https://t.me/kurimother">
+              <NavLink to="/blogs">
                 <button className="inline-flex items-center px-6 py-3 bg-[#8BC34A] text-white rounded-full hover:bg-[#7baf3d] transition-colors">
                   {t("learn_more")}
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
-              </a>
+              </NavLink>
             </div>
             <div className="p-8 rounded-2xl bg-[#FFF5F5] transition-transform hover:scale-[1.02]">
               <Users className="w-12 h-12 text-[#FF8A80] mb-4" />
@@ -92,35 +95,13 @@ function OurServices() {
           </div>
         </div>
       </section>
-      <section className="py-16 bg-[#FAF7EB]">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-[#2D3648] mb-12">
-            {t("testimonials_title")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <p className="text-[#4A5568] italic mb-4">{t("testimonial_1")}</p>
-              <p className="font-semibold text-[#2D3648]">
-                {t("testimonial_author_1")}
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <p className="text-[#4A5568] italic mb-4">{t("testimonial_1")}</p>
-              <p className="font-semibold text-[#2D3648]">
-                {t("testimonial_author_1")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
       <section className="py-20 bg-[#2D3648] text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-6">
             {t("start_motherhood_journey")}
           </h2>
-          <p className="text-lg mb-8 opacity-90">
-            {t("join_successful_mothers")}
-          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://t.me/kurimother">
               <button className="px-8 py-4 bg-white text-[#2D3648] rounded-full hover:bg-gray-100 transition-colors">

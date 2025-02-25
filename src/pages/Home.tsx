@@ -7,59 +7,25 @@ import {
   ShoppingBag,
   ArrowRight,
 } from "lucide-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import supplementImg from "../Assets/supplement.png";
+import teaImg from "../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
+
 import PartnerCarousel from "@/components/HomePage/PartnerCarousel";
 import { useTranslation } from "react-i18next";
 import "../i18n";
-import { t } from "i18next";
 
-const testimonials = [
-  {
-    quote: t("quote_bet"),
-    author: t("author_bet"),
-    location: t("location_bet"),
-  },
-  {
-    quote: t("quote_hel"),
-    author: t("author_hel"),
-    location: t("location_hel"),
-  },
-  {
-    quote: t("quote_ami"),
-    author: t("author_ami"),
-    location: t("location_ami"),
-  },
-];
+import Testimonials from "@/components/Testimonials";
+
 const Home = () => {
   const { t } = useTranslation();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prev: number) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prev: number) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextTestimonial, 5000);
-    return () => clearInterval(interval);
-  }, []);
   return (
     <div className="w-full   ">
       <section className=" p-4 sm:px-6 lg:px-8 h-[calc(100vh-80px)] flex items-center justify-center">
         <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-5">
             <div className="flex-1 space-y-8">
-              <h1 className="text-3xl md:text-5xl lg:text-4xl font-bold text-[#104a52] leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-4xl tracking-wider  font-bold text-[#104a52] leading-relaxed">
                 {t("welcome")}
               </h1>
               <p className="text-xl  ">{t("welcome_description")}</p>
@@ -130,22 +96,23 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: t("anise_title"),
-                image:
-                  "https://images.unsplash.com/photo-1544787219-7f47ccb76574",
-                description: t("anise_description"),
+                title: t("lactation_title"),
+                image: teaImg,
+                description: t("lactation_description"),
+                comingSoon: false,
               },
               {
                 title: t("cookies_title"),
                 image:
                   "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
                 description: t("cookies_description"),
+                comingSoon: true,
               },
               {
                 title: t("supplements_title"),
-                image:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
+                image: supplementImg,
                 description: t("supplements_description"),
+                comingSoon: true,
               },
             ].map((product, index) => (
               <div
@@ -164,7 +131,7 @@ const Home = () => {
                   </p>
                   <Button className="w-full bg-[#104a52] text-white hover:bg-[#2D3648]">
                     <ShoppingBag className="mr-2 h-4 w-4" />
-                    {t("shop_btn")}
+                    {product.comingSoon ? t("coming_soon") : t("shop_btn")}
                   </Button>
                 </div>
               </div>
@@ -172,45 +139,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#FAF7EB] flex gap-2 items-center justify-center">
-        <button
-          onClick={prevTestimonial}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
-        >
-          <ChevronLeft className="h-6 w-6 text-gray-700" />
-        </button>
-        <div className="max-w-3xl mx-auto text-center relative">
-          {/* Testimonial Content */}
-
-          <h2 className="text-3xl font-semibold mb-12">
-            {t("testimonial_title")}
-          </h2>
-          <motion.div
-            key={currentIndex} // Forces reanimation when index changes
-            initial={{ opacity: 0, x: 100 }} // Start position
-            animate={{ opacity: 1, x: 0 }} // End position
-            exit={{ opacity: 0, x: -100 }} // Exit position
-            transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth animation
-          >
-            <blockquote
-              className="text-xl text-gray-700 italic mb-6 transition-opacity duration-300"
-              key={currentIndex}
-            >
-              "{testimonials[currentIndex].quote}"
-            </blockquote>
-            <p className="font-semibold">
-              {testimonials[currentIndex].author},{" "}
-              {testimonials[currentIndex].location}
-            </p>
-          </motion.div>
-        </div>
-        <button
-          onClick={nextTestimonial}
-          className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition"
-        >
-          <ChevronRight className="h-6 w-6 text-gray-700" />
-        </button>
-      </section>
+      <Testimonials />
       <section className="">
         <PartnerCarousel />
       </section>

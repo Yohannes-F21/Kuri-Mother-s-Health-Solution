@@ -1,4 +1,5 @@
 {
+  "home": "Home",
   "welcome": "The First Lactation Support Platform In Ethiopia",
   "welcome_description": "Welcome to Kuri Mother’s Health Solution where we offer lactation products, peer-to-peer support, expert guidance, and a trusted community—all in one place for breastfeeding mothers.",
   "welcome_btn": "Join Our Community",
@@ -48,7 +49,9 @@
   "products_description": "Enhance Your Breastfeeding Journey with Our Organic Products",
   "products_subdescription": "Carefully crafted with organic, research-backed ingredients for effective results.",
 
-  "anise_title": "Anise Lactation Tea",
+  "lactation_title": "Kuri Lactation Tea",
+  "lactation_description": "A soothing blend of herbs known to promote milk production and relaxation.",
+  "anise_title": "Anise Blend Tea",
   "anise_description": "Boost your milk supply naturally with this refreshing blend of anise.",
   "anise_features": [
     "Natural ingredients",
@@ -56,11 +59,11 @@
     "Pleasant taste"
   ],
 
-  "mint_title": "Mint Lactation Tea",
+  "mint_title": "Mint Blend Tea",
   "mint_description": "A soothing blend to support your breastfeeding journey.",
   "mint_features": ["Refreshing flavor", "Digestive support", "Caffeine free"],
 
-  "fenugreek_title": "Fenugreek Blend",
+  "fenugreek_title": "Fenugreek Blend Tea",
   "fenugreek_description": "Traditional herbs combined for maximum effectiveness.",
   "fenugreek_features": [
     "Enhanced milk production",
@@ -69,7 +72,7 @@
   ],
 
   "cookies_title": "Lactation Cookies",
-  "cookies_description": "Delicious cookies with galactagogues",
+  "cookies_description": "A delicious way to nourish your body and support lactation.",
   "cookies_features": [
     "Natural ingredients",
     "Proven effectiveness",
@@ -85,22 +88,25 @@
   ],
 
   "shop_btn": "Shop Now",
+  "coming_soon": "Coming Soon",
 
   "testimonial_title": "What Mothers Say",
-  "quote_bet": "Kuri's lactation tea has made a huge difference for me. My milk supply increased, and I felt more relaxed during feeding times.",
-  "author_bet": "- Bethlehem T.",
-  "location_bet": "Addis Ababa",
+  "quote_bet": "I was struggling with low milk supply, and it was so frustrating. After trying Kuri’s lactation tea, I noticed a difference within days! My baby is happier, and I feel more confident.",
+  "author_bet": "Fikrte A (Mother of two) ",
+  "location_bet": "mom of two",
 
-  "quote_hel": "I was struggling with low milk supply, but after using Kuri, I noticed a big improvement. Highly recommended!",
-  "author_hel": "- Helen G.",
+  "quote_hel": "Breastfeeding was overwhelming, and I had so many questions. The Kuri community responded quickly whenever I needed advice. I no longer feel alone in this journey.",
+  "author_hel": "Ayantu D (Mother of one)",
   "location_hel": "Nairobi",
 
-  "quote_ami": "Amazing tea! It helped me feel more at ease during breastfeeding, and my baby seems happier too.",
-  "author_ami": "- Amina K.",
+  "quote_ami": "I was exhausted, thinking my milk wasn’t enough. The lactation tea helped, and the support I got from Kuri made all the difference. I wish I had found this sooner!",
+  "author_ami": "Amina S (Mother of two)",
   "location_ami": "Lagos",
 
+  "our_partners": "Our Partners",
+
   "join_community": "Join Our Community",
-  "join_description": "At Kuri Mother's Health Solution, we're your partner in motherhood. Join our community and thrive in your breastfeeding journey!",
+  "join_description": "At Kuri Mother's Health Solution, we're here to support you through motherhood. Join our community and make your breastfeeding journey easier!",
   "join_telegram": "Join the Conversation on Telegram",
 
   "product_title": "Our Products",

@@ -38,7 +38,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex  md:flex-row items-center md:gap-12">
             <div className="flex-1">
-              <h1 className="text-3xl md:text-5xl font-semibold text-[#104a52] mb-6">
+              <h1 className="text-3xl md:text-4xl tracking-tight font-semibold text-[#104a52] mb-6">
                 {t("about_us_title")}
               </h1>
               <p className="text-lg text-gray-800 mb-8">

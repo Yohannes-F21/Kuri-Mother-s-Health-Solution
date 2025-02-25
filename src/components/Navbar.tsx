@@ -51,6 +51,18 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center space-x-1">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
+                  isActive
+                    ? "text-[#faaf18] font-bold "
+                    : "text-white  hover:text-[#faaf18] hover:underline"
+                }`
+              }
+            >
+              {t("home")}
+            </NavLink>
             {navbarContent.map((item) => (
               <NavLink
                 key={item}
@@ -58,7 +70,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-[#faaf18]  "
+                      ? "text-[#faaf18] font-bold  "
                       : "text-white hover:text-[#faaf18] hover:underline"
                   }`
                 }
@@ -92,7 +104,19 @@ const Navbar = () => {
         </div>
         {isMenuOpen && (
           <div ref={menuRef} className="lg:hidden pb-4 px-4">
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 items-center">
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isActive
+                      ? "text-[#faaf18]  "
+                      : "text-white hover:text-[#faaf18] hover:underline"
+                  }`
+                }
+              >
+                {t("home")}
+              </NavLink>
               {navbarContent.map((item) => (
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <NavLink

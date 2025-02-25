@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
+      {/* <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
           src={banImg}
           alt="Mother and baby"
@@ -64,7 +64,7 @@ const Contact = () => {
             {t("hero_subtitle")}
           </p>
         </div>
-      </section>
+      </section> */}
 
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

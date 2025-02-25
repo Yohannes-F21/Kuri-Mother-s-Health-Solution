@@ -3,6 +3,7 @@ import { MingcuteTelegramFill } from "./TelegramIcon";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
+import logo from "../Assets/KURI_LOGO_VARIATION PNG-01.png";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -11,10 +12,14 @@ const Footer = () => {
     <footer className="bg-white border-t ">
       <div className=" px-4 sm:px-6 lg:px-8 py-12 flex flex-col  items-center sm:flex-row sm:justify-center ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-center sm:text-left">
-              {t("brand_name")}
-            </h3>
+          <div className="flex flex-col justify-between items-center">
+            <div className="  mb-4 text-center sm:text-left">
+              <img
+                src={logo}
+                alt="Kuri Logo"
+                className="w-28 h-w-28 object-contain"
+              />
+            </div>
             <p className="text-gray-600 text-center sm:text-left">
               {t("brand_description")}
             </p>
@@ -62,7 +67,7 @@ const Footer = () => {
             <ul className="space-y-2 text-center sm:text-left">
               <li className="text-gray-600">{t("address")}</li>
               <li className="text-gray-600">info@kurihealth.com</li>
-              <li className="text-gray-600">+251 911 123 456</li>
+              <li className="text-gray-600">+251933935593</li>
             </ul>
           </div>
           <div>

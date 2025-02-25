@@ -77,21 +77,20 @@ const Blog = () => {
   return (
     <div className="w-full min-h-screen bg-white">
       {/* Header & Search */}
-      <div className="pt-24 w-full bg-[#faf7eb] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9')] opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 py-16 relative">
-          <h1 className="text-3xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
+      <div className=" w-full  relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 relative">
+          {/* <h1 className="text-3xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
             {t("blog_title")}
           </h1>
           <p className="text-xl text-center text-gray-600 mb-8">
             {t("blog_description")}
-          </p>
+          </p> */}
           <div className="max-w-2xl mx-auto relative">
             <input
               type="text"
               placeholder={t("search_placeholder")}
               onChange={(e) => handleSearch(e.target.value)}
-              className="w-full px-6 py-4 rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FBC53F] pl-14"
+              className="w-full px-6 py-4 drop-shadow-xl rounded-full border border-gray-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#FBC53F] pl-14"
             />
             <Search className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
