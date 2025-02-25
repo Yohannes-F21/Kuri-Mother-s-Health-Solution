@@ -219,7 +219,7 @@ const Home = () => {
           <h2 className="text-3xl font-semibold mb-6">{t("join_community")}</h2>
           <p className="text-lg mb-8">{t("join_description")}</p>
           <a href="https://t.me/kurimother">
-            <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg flex items-center justify-center group">
+            <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-6 text-lg flex items-center justify-center w-[90%] mx-auto">
               {t("join_telegram")}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-2" />
             </Button>

@@ -34,11 +34,11 @@ const About = () => {
 
   return (
     <div className="w-full min-h-screen bg-white">
-      <section className="  w-full py-20">
+      <section className="  w-full ">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex  md:flex-row items-center md:gap-12">
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-semibold text-[#104a52] mb-6">
+              <h1 className="text-3xl md:text-5xl font-semibold text-[#104a52] mb-6">
                 {t("about_us_title")}
               </h1>
               <p className="text-lg text-gray-800 mb-8">
@@ -50,16 +50,14 @@ const About = () => {
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-2" />
               </Button>
             </div>
-            <div className="flex-1">
-              <div className="hidden md:flex">
-                {/* <Hero /> */}
-                <div>
-                  <img
-                    src={image}
-                    alt="about"
-                    className="w-[450px] h-[500px] rounded-e-3xl object-cover"
-                  />
-                </div>
+            <div className="flex-1 py-20 hidden md:flex">
+              {/* <Hero /> */}
+              <div>
+                <img
+                  src={image}
+                  alt="about"
+                  className="w-[450px] h-[500px] rounded-e-3xl object-cover "
+                />
               </div>
             </div>
           </div>

@@ -80,7 +80,7 @@ const Blog = () => {
       <div className="pt-24 w-full bg-[#faf7eb] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9')] opacity-5" />
         <div className="max-w-7xl mx-auto px-4 py-16 relative">
-          <h1 className="text-4xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
+          <h1 className="text-3xl md:text-5xl font-semibold text-center text-[#2D3648] mb-4">
             {t("blog_title")}
           </h1>
           <p className="text-xl text-center text-gray-600 mb-8">
@@ -128,7 +128,7 @@ const Blog = () => {
                   />
                   <span className="text-2xl tracking-widest">...</span>
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
                   <span className="text-gray-500">
                     {formatDate(blogs[0].updated)}
                   </span>

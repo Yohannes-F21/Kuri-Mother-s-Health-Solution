@@ -59,12 +59,14 @@ const Products = () => {
           alt="Mother and baby"
           className="absolute inset-0 w-full h-full object-fill"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold text-white mb-4 text-center">
+          <h1 className="text-2xl md:text-5xl font-bold text-white mb-4 text-center">
             {t("product_description")}
           </h1>
-          <p className="text-xl text-white/90">{t("product_details")}</p>
+          <p className=" text-lg md:text-xl text-white/90 text-center">
+            {t("product_details")}
+          </p>
         </div>
       </section>
       {/* Products Grid */}
@@ -91,9 +93,6 @@ const Products = () => {
                     </li>
                   ))}
                 </ul>
-                {/* <button className="w-full bg-[#FFE5E5] text-gray-800 py-2 rounded-lg hover:bg-[#FFD1D1] transition-colors">
-                  Learn More
-                </button> */}
               </div>
             </div>
           ))}

@@ -15,12 +15,12 @@ function OurServices() {
           alt="Mother and baby"
           className="absolute inset-0 w-full h-full object-fill"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold text-white mb-4 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 text-center">
             {t("digital_platform_title")}
           </h1>
-          <p className="text-xl text-white/90 text-center">
+          <p className=" text-lg md:text-xl text-white/90 text-center">
             {t("digital_platform_description")}
           </p>
         </div>

@@ -9,13 +9,15 @@ const Footer = () => {
 
   return (
     <footer className="bg-white border-t ">
-      <div className=" px-4 sm:px-6 lg:px-8 py-12 flex flex-col  items-center sm:flex-row sm:justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className=" px-4 sm:px-6 lg:px-8 py-12 flex flex-col  items-center sm:flex-row sm:justify-center ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
           <div>
             <h3 className="text-xl font-semibold mb-4 text-center sm:text-left">
               {t("brand_name")}
             </h3>
-            <p className="text-gray-600 ">{t("brand_description")}</p>
+            <p className="text-gray-600 text-center sm:text-left">
+              {t("brand_description")}
+            </p>
           </div>
           <div>
             <h4 className="font-semibold mb-4 text-center sm:text-left">
@@ -67,7 +69,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-center sm:text-left">
               {t("follow_us")}
             </h4>
-            <div className="flex space-x-4 justify-center sm:justify-start">
+            <div className="flex space-x-4 justify-center sm:justify-start ">
               <a
                 href="https://t.me/kurimother"
                 className="text-gray-600 hover:text-[#104a52] "
