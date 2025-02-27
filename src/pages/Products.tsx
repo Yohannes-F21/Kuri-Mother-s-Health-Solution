@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import BannerCarousel from "@/components/ProductsPage/BannerCarousel";
+import teaImg from "../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
+import supplementImg from "../Assets/supplement.png";
 
 interface Product {
   name: string;
@@ -18,8 +20,7 @@ const Products = () => {
     {
       name: t("anise_title"),
       description: t("anise_description"),
-      image:
-        "https://goodeggs4.imgix.net/92599f79-3115-4f0f-94d7-86ba10ba96ff.jpg?w=840&h=525&fm=jpg&q=80&fit=crop",
+      image: teaImg,
       benefits: t("anise_features", { returnObjects: true }) as string[],
     },
     {
@@ -45,30 +46,14 @@ const Products = () => {
     {
       name: t("supplements_title"),
       description: t("supplements_description"),
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7BrMTIziCyOA3LmJljUvMvldNju2F6FLHXg&s",
+      image: supplementImg,
       benefits: t("supplements_features", { returnObjects: true }) as string[],
     },
   ];
   return (
     <div className="w-full">
       {/* Hero Section */}
-      {/* <section className="relative h-[calc(100vh-80px)] w-full overflow-hidden">
-        <img
-          src={banner1}
-          alt="Mother and baby"
-          className="absolute inset-0 w-full h-full object-fill"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
-          <h1 className="text-2xl md:text-5xl font-bold text-white mb-4 text-center">
-            {t("product_description")}
-          </h1>
-          <p className=" text-lg md:text-xl text-white/90 text-center">
-            {t("product_details")}
-          </p>
-        </div>
-      </section> */}
+
       <BannerCarousel></BannerCarousel>
       {/* Products Grid */}
       <section className="max-w-7xl mx-auto px-4 py-16">

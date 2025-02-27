@@ -5,9 +5,11 @@ import image from "../Assets/kuri-about.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
+import i18next from "i18next";
 
 const About = () => {
   const { t } = useTranslation();
+  const currentLanguage = i18next.language;
 
   const features = [
     {
@@ -38,7 +40,13 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex  md:flex-row items-center md:gap-12">
             <div className="flex-1">
-              <h1 className="text-3xl md:text-4xl tracking-tight font-semibold text-[#104a52] mb-6">
+              <h1
+                className={`${
+                  currentLanguage === "am"
+                    ? "lg:text-4xl tracking-tighter"
+                    : "lg:text-5xl"
+                } text-3xl md:text-4xl  font-semibold text-[#104a52] mb-6`}
+              >
                 {t("about_us_title")}
               </h1>
               <p className="text-lg text-gray-800 mb-8">

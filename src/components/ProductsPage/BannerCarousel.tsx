@@ -29,7 +29,7 @@ const BannerCarousel = () => {
             <img
               src={banner}
               alt={`Banner ${index + 1}`}
-              className="absolute inset-0 w-full h-full object-fill"
+              className="absolute inset-0 w-full h-full "
             />
             <div className="absolute inset-0 bg-black/30" />
             <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">

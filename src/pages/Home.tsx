@@ -13,11 +13,14 @@ import teaImg from "../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
 import PartnerCarousel from "@/components/HomePage/PartnerCarousel";
 import { useTranslation } from "react-i18next";
 import "../i18n";
+import i18next from "i18next";
 
 import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   const { t } = useTranslation();
+  const currentLanguage = i18next.language;
+  console.log(currentLanguage);
 
   return (
     <div className="w-full   ">
@@ -25,7 +28,13 @@ const Home = () => {
         <div className="max-w-7xl mx-auto h-full flex items-center justify-center">
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-5">
             <div className="flex-1 space-y-8">
-              <h1 className="text-3xl md:text-5xl lg:text-4xl tracking-wider  font-bold text-[#104a52] leading-relaxed">
+              <h1
+                className={`${
+                  currentLanguage === "am"
+                    ? "lg:text-3xl tracking-tighter"
+                    : "lg:text-4xl"
+                } text-3xl md:text-5xl   font-bold text-[#104a52] leading-relaxed`}
+              >
                 {t("welcome")}
               </h1>
               <p className="text-xl  ">{t("welcome_description")}</p>

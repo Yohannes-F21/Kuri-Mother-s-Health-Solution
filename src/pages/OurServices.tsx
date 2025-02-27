@@ -4,7 +4,7 @@ import { HugeiconsPeerToPeer02 } from "../components/PeerNetworkIcon";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 // import banner2 from "../Assets/kuri-banner-2.jpeg";
-import banner1 from "../Assets/doctors.png";
+import doctorsImg from "../Assets/doctors.jpg";
 import { NavLink } from "react-router-dom";
 import Testimonials from "@/components/Testimonials";
 
@@ -14,11 +14,11 @@ function OurServices() {
     <div className="w-full min-h-screen bg-white">
       <section className="relative  h-[calc(100vh-80px)] w-full overflow-hidden">
         <img
-          src={banner1}
+          src={doctorsImg}
           alt="Mother and baby"
           className="absolute inset-0 w-full h-full object-fill"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 text-center">
             {t("digital_platform_title")}

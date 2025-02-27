@@ -48,27 +48,6 @@ const router = createBrowserRouter([
         path: "/contact-us",
         element: <Contact />,
       },
-      {
-        path: "/ስለ-እኛ",
-        element: <About />,
-      },
-      {
-        path: "/ምርቶቻችን",
-        element: <Products />,
-      },
-      {
-        path: "/አገልግሎቶቻችን",
-        element: <OurServices />,
-      },
-      {
-        path: "/ብሎግ",
-        element: <Blog />,
-        loader: blogLoader,
-      },
-      {
-        path: "/ያግኙን",
-        element: <Contact />,
-      },
     ],
   },
 ]);

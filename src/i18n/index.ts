@@ -10,7 +10,7 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      es: { translation: am },
+      am: { translation: am },
     },
     fallbackLng: "en",
   });

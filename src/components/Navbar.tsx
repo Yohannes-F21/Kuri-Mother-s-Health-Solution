@@ -12,12 +12,15 @@ const Navbar = () => {
   const { t } = useTranslation();
 
   const navbarContent = [
-    t("about_us"),
-    t("products_title"),
-    t("services_title"),
-    t("blog"),
-    t("contact_us"),
+    { name: t("home"), path: "/" },
+    { name: t("about_us"), path: "/about-us" },
+    { name: t("products_title"), path: "/our-products" },
+    { name: t("services_title"), path: "/our-Services" },
+    { name: t("blog"), path: "/blogs" },
+    { name: t("contact_us"), path: "/contact-us" },
   ];
+  console.log(navbarContent);
+
   // the following code is for the google translator
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,37 +54,22 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center space-x-1">
-            <NavLink
-              to={"/"}
-              className={({ isActive }) =>
-                `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
-                  isActive
-                    ? "text-[#faaf18] font-bold "
-                    : "text-white  hover:text-[#faaf18] hover:underline"
-                }`
-              }
-            >
-              {t("home")}
-            </NavLink>
             {navbarContent.map((item) => (
               <NavLink
-                key={item}
-                to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                key={item.name}
+                to={item.path}
                 className={({ isActive }) =>
                   `px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "text-[#faaf18] font-bold  "
-                      : "text-white hover:text-[#faaf18] hover:underline"
+                      ? "bg-[#faaf18] text-[#104A52]  "
+                      : "text-white hover:text-[#faaf18] "
                   }`
                 }
               >
-                {item}
+                {item.name}
               </NavLink>
             ))}
-            {/* <NavLink to={''}>About</NavLink> */}
-            {/* <Button className="ml-4 bg-gradient-to-r from-[#FFD6E0] to-[#FFE5D9] text-gray-800 hover:opacity-90 transition-opacity duration-200 shadow-sm">
-              Join Community
-            </Button> */}
+
             {/* <GoogleTranslate></GoogleTranslate> */}
             <LanguageSwitcher />
           </div>
@@ -105,23 +93,11 @@ const Navbar = () => {
         {isMenuOpen && (
           <div ref={menuRef} className="lg:hidden pb-4 px-4">
             <div className="flex flex-col space-y-2 items-center">
-              <NavLink
-                to={"/"}
-                className={({ isActive }) =>
-                  `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    isActive
-                      ? "text-[#faaf18]  "
-                      : "text-white hover:text-[#faaf18] hover:underline"
-                  }`
-                }
-              >
-                {t("home")}
-              </NavLink>
               {navbarContent.map((item) => (
                 <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <NavLink
-                    key={item}
-                    to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    key={item.name}
+                    to={item.path}
                     className={({ isActive }) =>
                       `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                         isActive
@@ -130,7 +106,7 @@ const Navbar = () => {
                       }`
                     }
                   >
-                    {item}
+                    {item.name}
                   </NavLink>
                 </button>
               ))}

@@ -36,7 +36,7 @@ const LanguageSwitcher = () => {
             <button onClick={() => i18n.changeLanguage("en")}>English</button>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <button onClick={() => i18n.changeLanguage("es")}>አማርኛ</button>
+            <button onClick={() => i18n.changeLanguage("am")}>አማርኛ</button>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
