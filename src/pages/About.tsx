@@ -43,7 +43,7 @@ const About = () => {
               <h1
                 className={`${
                   currentLanguage === "am"
-                    ? "lg:text-4xl tracking-tighter"
+                    ? "lg:text-4xl tracking-tight"
                     : "lg:text-5xl"
                 } text-3xl md:text-4xl  font-semibold text-[#104a52] mb-6`}
               >

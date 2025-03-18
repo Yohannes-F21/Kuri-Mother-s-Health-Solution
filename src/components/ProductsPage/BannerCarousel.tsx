@@ -7,9 +7,9 @@ import "../../i18n";
 import { t } from "i18next";
 
 // Import banner images
-import banner1 from "../../Assets/Kuri Packaging_3 Box_Mockup.jpg";
-import banner2 from "../../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
-import banner3 from "../../Assets/supplement.png";
+import banner1 from "../../Assets/product_1.png";
+import banner2 from "../../Assets/product_2.jpg";
+import banner3 from "../../Assets/product_3.jpg";
 
 const BannerCarousel = () => {
   const banners = [banner1, banner2, banner3]; // Add your banner images here

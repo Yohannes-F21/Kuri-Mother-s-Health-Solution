@@ -31,7 +31,7 @@ const Home = () => {
               <h1
                 className={`${
                   currentLanguage === "am"
-                    ? "lg:text-3xl tracking-tighter"
+                    ? "lg:text-3xl tracking-tight"
                     : "lg:text-4xl"
                 } text-3xl md:text-5xl   font-bold text-[#104a52] leading-relaxed`}
               >

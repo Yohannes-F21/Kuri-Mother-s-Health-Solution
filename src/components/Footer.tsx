@@ -12,8 +12,8 @@ const Footer = () => {
     <footer className="bg-white border-t ">
       <div className=" px-4 sm:px-6 lg:px-8 py-12 flex flex-col  items-center sm:flex-row sm:justify-center ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
-          <div className="flex flex-col justify-between items-center">
-            <div className="  mb-4 text-center sm:text-left">
+          <div className="flex flex-col justify-between items-center sm:items-start ">
+            <div className="  mb-4  sm:text-left">
               <img
                 src={logo}
                 alt="Kuri Logo"
@@ -28,7 +28,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-center sm:text-left">
               {t("quick_links")}
             </h4>
-            <ul className="space-y-2 text-center sm:text-left">
+            <ul className="space-y-4 text-center sm:text-left">
               <li>
                 <Link
                   to="/about-us"
@@ -64,7 +64,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-center sm:text-left">
               {t("contact")}
             </h4>
-            <ul className="space-y-2 text-center sm:text-left">
+            <ul className="space-y-4 text-center sm:text-left">
               <li className="text-gray-600">{t("address")}</li>
               <li className="text-gray-600">info@kurihealth.com</li>
               <li className="text-gray-600">+251933935593</li>
@@ -74,30 +74,42 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-center sm:text-left">
               {t("follow_us")}
             </h4>
-            <div className="flex space-x-4 justify-center sm:justify-start ">
+            <div className="flex flex-col space-y-4 justify-center sm:justify-start ">
               <a
                 href="https://t.me/kurimother"
-                className="text-gray-600 hover:text-[#104a52] "
+                className="text-gray-600 hover:text-[#faaf18] "
               >
-                <MingcuteTelegramFill className="h-6 w-6" />
+                <div className="flex items-center space-x-2">
+                  <MingcuteTelegramFill className="h-6 w-6" />
+                  <span>Telegram</span>
+                </div>
               </a>
               <a
                 href="https://www.facebook.com/share/1AmEY4HXwZ/?mibextid=wwXIfr"
-                className="text-gray-600 hover:text-[#104a52] "
+                className="text-gray-600 hover:text-[#faaf18] "
               >
-                <Facebook className="h-6 w-6 " />
+                <div className="flex items-center space-x-2">
+                  <Facebook className="h-6 w-6" />
+                  <span>Facebook</span>
+                </div>
               </a>
               <a
                 href="https://www.instagram.com/kuri_mothers?igsh=MThzdzYzYTk3ZGJlbg%3D%3D&utm_source=qr"
-                className="text-gray-600 hover:text-[#104a52]"
+                className="text-gray-600 hover:text-[#faaf18]"
               >
-                <Instagram className="h-6 w-6" />
+                <div className="flex items-center space-x-2">
+                  <Instagram className="h-6 w-6" />
+                  <span>Instagram</span>
+                </div>
               </a>
               <a
                 href="https://www.linkedin.com/company/kuri-mothers-health-solution/"
-                className="text-gray-600 hover:text-[#104a52]"
+                className="text-gray-600 hover:text-[#faaf18]"
               >
-                <Linkedin className="h-6 w-6" />
+                <div className="flex items-center space-x-2">
+                  <Linkedin className="h-6 w-6" />
+                  <span>Linkedin</span>
+                </div>
               </a>
             </div>
           </div>

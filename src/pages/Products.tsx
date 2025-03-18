@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import "../i18n";
 import BannerCarousel from "@/components/ProductsPage/BannerCarousel";
 import teaImg from "../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
+
 import supplementImg from "../Assets/supplement.png";
 
 interface Product {
