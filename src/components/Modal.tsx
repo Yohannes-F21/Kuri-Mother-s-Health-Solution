@@ -35,7 +35,7 @@ const Modal = ({
   if (!isOpen) return null;
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
@@ -62,7 +62,7 @@ const Modal = ({
             <img
               src={image(img)}
               alt="Article header image"
-              className="w-full h-64 object-cover rounded-xl mb-6"
+              className="w-full h-96 rounded-xl mb-6"
             />
             <div className="text-gray-600 space-y-4">
               {/* {content.split("\n").map((paragraph, index) => (

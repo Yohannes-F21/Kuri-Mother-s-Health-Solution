@@ -74,7 +74,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-center sm:text-left">
               {t("follow_us")}
             </h4>
-            <div className="flex flex-col space-y-4 justify-center sm:justify-start ">
+            <div className="flex flex-col space-y-4 justify-center items-center sm:items-start sm:justify-start ">
               <a
                 href="https://t.me/kurimother"
                 className="text-gray-600 hover:text-[#faaf18] "

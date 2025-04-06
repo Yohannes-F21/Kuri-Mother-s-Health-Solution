@@ -3,14 +3,18 @@ export interface Author {
   name: string;
   email: string;
 }
+export interface lang {
+  english: { title: string; content: string };
+  amharic: { title: string; content: string };
+}
 
 export interface Blog {
   author: Author;
-  content: string;
+  lang: lang;
   created: string;
   isPublished: boolean;
   thumbnail: string;
-  title: string;
+  category: string;
   updated: string;
   __v: number;
   _id: string;

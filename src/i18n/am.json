@@ -124,6 +124,7 @@
   "start_motherhood_journey": " የእናትነት ጉዞዎን ዛሬ ይጀምሩ",
   "join_successful_mothers": "በኩሪ የድጋፍ ሥርዓት ስኬትን ያገኙ ሺ እናቶችን ይቀላቀሉ።",
   "join_support_group": "የእናቶች ድጋፍ ቡድናችንን ይቀላቀሉ",
+
   "blog": "ብሎግ",
   "blog_title": "ኩሪ ብሎግ፡ ልዩ መረጃዎች ስለ የጡት ማጥባት እና እናትነት",
   "blog_description": "እናቶችን በእውቀት ማስበረታታት፣ አንድ መጣጥፍ በአንድ ጊዜ።",
@@ -132,6 +133,11 @@
   "read_more": "ተጨማሪ ያንብቡ",
   "no_blogs_found": "ምንም ብሎግ አልተገኘም። እባኮትን በሌላ የፍለጋ ቃል ይሞክሩ!",
   "close_article": "ዝጋ",
+  "news": "ዜና",
+  "news_title": "ኩሪ ዜና፡ የእናቶች ጤና መፍትሄ ዜናዎች",
+  "featured_news": "የተለየ ዜና",
+  "no_news_found": "ምንም ዜና አልተገኘም። እባኮትን በሌላ የፍለጋ ቃል ይሞክሩ!",
+  "search_placeholder_news": "ዜናዎችን በርዕስ፣ በቁልፍ ቃል ይፈልጉ...",
 
   "contact_us": "ያግኙን",
   "hero_title": "እያንዳንዱ ደረጃ ለመርዳት እንዘጋጃለን",

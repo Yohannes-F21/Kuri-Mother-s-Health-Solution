@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import { loader as blogLoader } from "./pages/Blog";
+import News from "./pages/News";
 
 const HydrateFallback = () => (
   <div className="flex items-center justify-center h-screen">
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blog />,
+        loader: blogLoader,
+      },
+      {
+        path: "/news",
+        element: <News />,
         loader: blogLoader,
       },
       {

@@ -17,6 +17,7 @@ const Navbar = () => {
     { name: t("products_title"), path: "/our-products" },
     { name: t("services_title"), path: "/our-Services" },
     { name: t("blog"), path: "/blogs" },
+    { name: t("news"), path: "/news" },
     { name: t("contact_us"), path: "/contact-us" },
   ];
   console.log(navbarContent);

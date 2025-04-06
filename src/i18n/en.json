@@ -146,6 +146,11 @@
   "read_more": "Read More",
   "no_blogs_found": "No blogs found. Please try a different search term!",
   "close_article": "Close Article",
+  "news": "News",
+  "news_title": "Kuri News: Stay Updated with Our Latest Developments",
+  "featured_news": "Featured News",
+  "no_news_found": "No news found. Please try a different search term!",
+  "search_placeholder_news": "Search news by topic, keyword, or date...",
 
   "contact_us": "Contact Us",
   "hero_title": "We're Here to Support You Every Step of the Way",
