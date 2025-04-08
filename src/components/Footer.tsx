@@ -66,7 +66,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-4 text-center sm:text-left">
               <li className="text-gray-600">{t("address")}</li>
-              <li className="text-gray-600">info@kurihealth.com</li>
+              <li className="text-gray-600">info.kurimothers@gmail.com</li>
               <li className="text-gray-600">+251933935593</li>
             </ul>
           </div>

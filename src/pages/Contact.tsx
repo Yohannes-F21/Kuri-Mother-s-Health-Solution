@@ -78,7 +78,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-4 text-gray-600" />
-                <span className="text-lg">support@kurimother.com</span>
+                <span className="text-lg">info.kurimothers@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <MessageCircle className="w-6 h-6 mr-4 text-gray-600" />
