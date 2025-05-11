@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import Modal from "../components/Modal";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
 import "../i18n";
@@ -12,7 +12,7 @@ import FeaturedBlogSkeleton from "../components/BlogPage/FeaturedBlogSkeleton";
 export const loader = async (): Promise<{ blogs: Blog[] }> => {
   try {
     const response = await axios.get(
-      "https://kuri-backend-ub77.onrenders.com/blogs"
+      "https://kuri-backend-ub77.onrender.com/blogs"
     );
     return { blogs: response.data.blogs || [] };
   } catch (error) {
@@ -22,6 +22,8 @@ export const loader = async (): Promise<{ blogs: Blog[] }> => {
 };
 
 const Blog = () => {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
   const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
   console.log(currentLang);
@@ -42,10 +44,10 @@ const Blog = () => {
     img: "",
   });
 
-  if (!blogs.length) {
+  if (isLoading || !blogs.length) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <FeaturedBlogSkeleton></FeaturedBlogSkeleton>
+        <FeaturedBlogSkeleton />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
           {Array.from({ length: 3 }).map((_, index) => (
             <BlogSkeleton key={index} />

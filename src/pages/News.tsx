@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import Modal from "../components/Modal";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
 import "../i18n";
 import { useTranslation } from "react-i18next";
+import BlogSkeleton from "../components/BlogPage/BlogSkeleton";
+import FeaturedBlogSkeleton from "../components/BlogPage/FeaturedBlogSkeleton";
 
 export const loader = async (): Promise<{ blogs: Blog[] }> => {
   try {
@@ -23,6 +25,8 @@ const News = () => {
   const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
   console.log(currentLang);
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
   const { blogs } = useLoaderData() as { blogs: Blog[] };
   // const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -39,6 +43,19 @@ const News = () => {
     created: "",
     img: "",
   });
+
+  if (isLoading || !blogs.length) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <FeaturedBlogSkeleton />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <BlogSkeleton key={index} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const openModal = (blog: Blog) => {
     setModalContent({
