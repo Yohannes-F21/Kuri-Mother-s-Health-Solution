@@ -6,11 +6,13 @@ import axios from "axios";
 import type { Blog } from "../../types";
 import "../i18n";
 import { useTranslation } from "react-i18next";
+import BlogSkeleton from "../components/BlogPage/BlogSkeleton";
+import FeaturedBlogSkeleton from "../components/BlogPage/FeaturedBlogSkeleton";
 
 export const loader = async (): Promise<{ blogs: Blog[] }> => {
   try {
     const response = await axios.get(
-      "https://kuri-backend-ub77.onrender.com/blogs"
+      "https://kuri-backend-ub77.onrenders.com/blogs"
     );
     return { blogs: response.data.blogs || [] };
   } catch (error) {
@@ -39,6 +41,19 @@ const Blog = () => {
     created: "",
     img: "",
   });
+
+  if (!blogs.length) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <FeaturedBlogSkeleton></FeaturedBlogSkeleton>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <BlogSkeleton key={index} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const openModal = (blog: Blog) => {
     setModalContent({
