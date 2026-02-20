@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, User } from "lucide-react";
 import type { Blog } from "../../types";
 
 const BlogPost = () => {
