@@ -30,18 +30,18 @@ const PartnerCarousel = () => {
               <img
                 src={partner1}
                 alt="Partner 1"
-                className="h-48  inline-block scale-125"
+                className="h-48  inline-block scale-125 mr-20"
               />
               <img
                 src={partner2}
                 alt="Partner 2"
-                className="h-32 mt-6  inline-block scale-150"
+                className="h-32 mt-6  inline-block scale-150 mr-20"
               />
 
               <img
                 src={partner4}
                 alt="Partner 4"
-                className="h-20 mt-6 w-auto inline-block"
+                className="h-20 mt-6 w-auto inline-block mr-20"
               />
             </React.Fragment>
           ))}
@@ -53,9 +53,8 @@ const PartnerCarousel = () => {
         {`
           .marquee {
             display: flex;
-            gap: 5rem;
             width: max-content;
-            animation: marquee-scroll 7s linear infinite;
+            animation: marquee-scroll 30s linear infinite;
           }
 
           @keyframes marquee-scroll {

@@ -1,66 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
-import Modal from "../components/Modal";
-import { useLoaderData } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
-export const loader = async (): Promise<{ blogs: Blog[] }> => {
-  try {
-    const response = await axios.get(
-      "https://kuri-backend-ub77.onrender.com/blogs"
-    );
-    return { blogs: response.data.blogs || [] };
-  } catch (error) {
-    console.error("Error fetching blogs:", error);
-    return { blogs: [] }; // Return empty array in case of an error
-  }
-};
-
 const Blog = () => {
   const { i18n, t } = useTranslation();
   const currentLang = i18n.language;
+  const navigate = useNavigate();
   console.log(currentLang);
-  const { blogs } = useLoaderData() as { blogs: Blog[] };
-  // const [loading, setLoading] = useState(true);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [modalContent, setModalContent] = useState<{
-    isOpen: boolean;
-    title: string;
-    content: string;
-    created: string;
-    img: string;
-  }>({
-    isOpen: false,
-    title: "",
-    content: "",
-    created: "",
-    img: "",
-  });
 
-  const openModal = (blog: Blog) => {
-    setModalContent({
-      isOpen: true,
-      title:
-        currentLang === "en"
-          ? blog.lang.english.title
-          : blog.lang.amharic.title,
-      content:
-        currentLang === "en"
-          ? blog.lang.english.content
-          : blog.lang.amharic.content,
-
-      created: blog.created,
-      img:
-        blog.thumbnail ||
-        "https://images.unsplash.com/photo-1555252333-9f8e92e65df9",
-    });
-  };
-
-  const closeModal = () => {
-    setModalContent((prev) => ({ ...prev, isOpen: false }));
+  const navigateToBlog = (id: string, category: string = "blogs") => {
+    // Assuming route is /blogs/:id or /news/:id, but simpler to use generic /post/:id or keep separated.
+    // Since new BlogPost component is shared, we might route /blogs/:id to it.
+    navigate(`/${category}/${id}`);
   };
 
   const formatDate = (isoString: string): string => {
@@ -76,14 +35,93 @@ const Blog = () => {
     setSearchTerm(value.trim());
   };
 
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchBlogs = async () => {
+      setLoading(true);
+      setFetchError(null);
+      try {
+        const response = await axios.get(
+          "https://kuri-backend-ub77.onrender.com/blogs",
+        );
+        const list = response.data?.blogs || [];
+        if (isMounted) setBlogs(list);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+        if (isMounted) {
+          setBlogs([]);
+          setFetchError("Failed to load blogs. Please try again.");
+        }
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   // Filter only published blogs
   const filteredBlogs = blogs
     .filter((blog) => blog.isPublished)
     .filter((blog) => blog.category === "blog")
     .filter((blog) =>
-      blog.lang.english.title.toLowerCase().includes(searchTerm.toLowerCase())
+      blog.lang.english.title.toLowerCase().includes(searchTerm.toLowerCase()),
     );
   const featuredBlog = blogs.find((blog) => blog.category === "blog");
+
+  const FeaturedSkeleton = () => (
+    <div className="max-w-7xl mx-auto px-4 py-12 animate-pulse">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
+        <div className="md:flex">
+          <div className="md:w-1/2">
+            <div className="w-full min-h-[400px] bg-gray-200" />
+          </div>
+          <div className="md:w-1/2 p-8 relative">
+            <div className="h-4 w-32 bg-gray-200 rounded" />
+            <div className="mt-4 h-7 w-3/4 bg-gray-200 rounded" />
+            <div className="mt-6 space-y-3">
+              <div className="h-4 w-full bg-gray-200 rounded" />
+              <div className="h-4 w-11/12 bg-gray-200 rounded" />
+              <div className="h-4 w-10/12 bg-gray-200 rounded" />
+              <div className="h-4 w-9/12 bg-gray-200 rounded" />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full px-4 pb-4">
+              <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
+                <div className="h-4 w-32 bg-gray-200 rounded" />
+                <div className="h-10 w-28 bg-gray-200 rounded-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const CardSkeleton = ({ index }: { index: number }) => (
+    <div
+      key={index}
+      className="bg-white rounded-xl overflow-hidden shadow-md flex flex-col h-full animate-pulse"
+    >
+      <div className="w-full h-48 bg-gray-200" />
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="h-5 w-3/4 bg-gray-200 rounded" />
+        <div className="mt-4 space-y-3 flex-grow">
+          <div className="h-4 w-full bg-gray-200 rounded" />
+          <div className="h-4 w-11/12 bg-gray-200 rounded" />
+          <div className="h-4 w-10/12 bg-gray-200 rounded" />
+        </div>
+        <div className="flex items-center justify-between mt-4">
+          <div className="h-4 w-24 bg-gray-200 rounded" />
+          <div className="h-4 w-20 bg-gray-200 rounded" />
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="w-full min-h-screen bg-white">
@@ -109,8 +147,10 @@ const Blog = () => {
       </div>
 
       {/* Featured Article */}
-      {!searchTerm && featuredBlog && (
-        <div className="max-w-7xl mx-auto px-4 py-12">
+      {!searchTerm && loading && <FeaturedSkeleton />}
+
+      {!searchTerm && !loading && featuredBlog && (
+        <div className="max-w-7xl mx-auto px-4 ">
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
             <div className="md:flex">
               <div className="md:w-1/2">
@@ -120,7 +160,7 @@ const Blog = () => {
                     "https://images.unsplash.com/photo-1555252333-9f8e92e65df9"
                   }
                   alt="Featured blog"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-full min-h-[400px] object-cover"
                 />
               </div>
               <div className="md:w-1/2 p-8 relative">
@@ -132,7 +172,7 @@ const Blog = () => {
                     ? featuredBlog.lang.english.title
                     : featuredBlog.lang.amharic.title}
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <div className="text-gray-600 mb-6">
                   <div
                     dangerouslySetInnerHTML={{
                       __html:
@@ -142,14 +182,14 @@ const Blog = () => {
                     }}
                   />
                   <span className="text-2xl tracking-widest">...</span>
-                </p>
+                </div>
                 <div className="absolute bottom-0 left-0 w-full px-4 pb-4">
                   <div className="flex flex-col md:flex-row items-center md:justify-between gap-4">
                     <span className="text-gray-500">
                       {formatDate(featuredBlog.updated)}
                     </span>
                     <button
-                      onClick={() => openModal(featuredBlog)}
+                      onClick={() => navigateToBlog(featuredBlog._id, "blogs")}
                       className="text-white px-6 py-2 rounded-full bg-[#104a52] hover:bg-[#2D3648] transition-colors"
                     >
                       {t("read_more")}
@@ -165,7 +205,15 @@ const Blog = () => {
       {/* Blog Grid */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredBlogs.length === 0 ? (
+          {loading ? (
+            Array.from({ length: 6 }).map((_, index) => (
+              <CardSkeleton key={index} index={index} />
+            ))
+          ) : fetchError ? (
+            <p className="text-gray-500 text-center text-xl col-span-3">
+              {fetchError}
+            </p>
+          ) : filteredBlogs.length === 0 ? (
             <p className="text-gray-500 text-center text-xl col-span-3">
               {t("no_blogs_found")}
             </p>
@@ -173,7 +221,7 @@ const Blog = () => {
             filteredBlogs.map((blog, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col h-full"
               >
                 <img
                   src={
@@ -183,13 +231,13 @@ const Blog = () => {
                   alt="Blog post"
                   className="w-full h-48 object-cover"
                 />
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-xl font-semibold mb-2">
                     {currentLang === "en"
                       ? blog.lang.english.title
                       : blog.lang.amharic.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <div className="text-gray-600 mb-4 flex-grow">
                     <div
                       dangerouslySetInnerHTML={{
                         __html:
@@ -198,13 +246,13 @@ const Blog = () => {
                             : blog.lang.amharic.content.substring(0, 200),
                       }}
                     />
-                  </p>
-                  <div className="flex items-center justify-between">
+                  </div>
+                  <div className="flex items-center justify-between mt-auto">
                     <span className="text-gray-500">
                       {formatDate(blog.updated)}
                     </span>
                     <button
-                      onClick={() => openModal(blog)}
+                      onClick={() => navigateToBlog(blog._id, "blogs")}
                       className="text-[#FBC53F] hover:text-[#faaf18] font-medium"
                     >
                       {t("read_more")} →
@@ -216,8 +264,6 @@ const Blog = () => {
           )}
         </div>
       </div>
-
-      <Modal {...modalContent} onClose={closeModal} />
     </div>
   );
 };

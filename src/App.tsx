@@ -9,8 +9,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import { loader as blogLoader } from "./pages/Blog";
 import News from "./pages/News";
+import BlogPost from "./pages/BlogPost";
 
 const HydrateFallback = () => (
   <div className="flex items-center justify-center h-screen">
@@ -43,12 +43,18 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blog />,
-        loader: blogLoader,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogPost />,
       },
       {
         path: "/news",
         element: <News />,
-        loader: blogLoader,
+      },
+      {
+        path: "/news/:id",
+        element: <BlogPost />,
       },
       {
         path: "/contact-us",
