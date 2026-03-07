@@ -22,7 +22,7 @@ const BlogPost = () => {
         // Using "blogs" for both since we don't have distinct endpoints confirmed or need to keep consistent
         // with the 'id' which likely comes from _id field.
         const response = await axios.get(
-          `https://kuri-backend-ub77.onrender.com/blogs/${id}`,
+          `https://api.kurimothers.com/blogs/${id}`,
         );
         // The API returns { blog: ... } or just { ... }?
         // Let's assume response.data might be the object directly if backend is standard restful

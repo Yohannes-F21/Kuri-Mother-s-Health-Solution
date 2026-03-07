@@ -42,9 +42,7 @@ const Blog = () => {
       setLoading(true);
       setFetchError(null);
       try {
-        const response = await axios.get(
-          "https://kuri-backend-ub77.onrender.com/blogs",
-        );
+        const response = await axios.get("https://api.kurimothers.com/blogs");
         const list = response.data?.blogs || [];
         if (isMounted) setBlogs(list);
       } catch (error) {
