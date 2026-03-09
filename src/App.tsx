@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Error from "./pages/Error";
 import About from "./pages/About";
 import HomeLayout from "./pages/HomeLayout";
 import Products from "./pages/Products";
 import OurServices from "./pages/OurServices";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -18,7 +18,7 @@ const HydrateFallback = () => (
   </div>
 );
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <HomeLayout />,
@@ -65,6 +65,12 @@ const router = createBrowserRouter([
 ]);
 
 export function App() {
+  useEffect(() => {
+    if (window.location.hostname === "www.kurimothers.com") {
+      window.location.replace(window.location.href.replace("://www.", "://"));
+    }
+  }, []);
+
   return (
     <React.Suspense fallback={<HydrateFallback />}>
       <RouterProvider router={router} />
