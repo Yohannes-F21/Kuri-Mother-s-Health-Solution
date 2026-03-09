@@ -22,9 +22,7 @@ const BlogPost = () => {
         setLoading(true);
         // Using "blogs" for both since we don't have distinct endpoints confirmed or need to keep consistent
         // with the 'id' which likely comes from _id field.
-        const response = await axios.get(
-          `${API_BASE_URL}/blogs/${id}`,
-        );
+        const response = await axios.get(`${API_BASE_URL}/blogs/${id}`);
         // The API returns { blog: ... } or just { ... }?
         // Let's assume response.data might be the object directly if backend is standard restful
         // Or response.data.blog like the list endpoint
