@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import axios from "axios";
+import { API_BASE_URL } from "../lib/api";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 // import banner3 from "../assets/kuri-banner-3.jpg";
@@ -31,10 +32,7 @@ const Contact = () => {
     setStatus({ success: false, message: "Sending..." });
 
     try {
-      await axios.post(
-        "https://kuri-backend-ub77.onrender.com/contact-us",
-        formData
-      ); // Replace with your API
+      await axios.post(`${API_BASE_URL}/contact-us`, formData); // Replace with your API
       setStatus({ success: true, message: t("success_message") });
       setFormData({ name: "", email: "", subject: "", message: "" }); // Clear form
     } catch (error) {

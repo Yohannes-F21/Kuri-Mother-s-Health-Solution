@@ -4,6 +4,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import type { Blog } from "../../types";
+import { API_BASE_URL } from "../lib/api";
 
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,7 @@ const BlogPost = () => {
         // Using "blogs" for both since we don't have distinct endpoints confirmed or need to keep consistent
         // with the 'id' which likely comes from _id field.
         const response = await axios.get(
-          `https://api.kurimothers.com/blogs/${id}`,
+          `${API_BASE_URL}/blogs/${id}`,
         );
         // The API returns { blog: ... } or just { ... }?
         // Let's assume response.data might be the object directly if backend is standard restful

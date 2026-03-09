@@ -3,6 +3,7 @@ import { Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import type { Blog } from "../../types";
+import { API_BASE_URL } from "../lib/api";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
@@ -42,7 +43,7 @@ const Blog = () => {
       setLoading(true);
       setFetchError(null);
       try {
-        const response = await axios.get("https://api.kurimothers.com/blogs");
+        const response = await axios.get(`${API_BASE_URL}/blogs`);
         const list = response.data?.blogs || [];
         if (isMounted) setBlogs(list);
       } catch (error) {
