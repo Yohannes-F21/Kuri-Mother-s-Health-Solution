@@ -51,24 +51,36 @@
 
   "lactation_title": "Kuri Lactation Tea",
   "lactation_description": "A soothing blend of herbs known to promote milk production and relaxation.",
-  "anise_title": "Anise Blend Tea",
-  "anise_description": "Boost your milk supply naturally with this refreshing blend of anise.",
+  "anise_title": "Lemon Flavored Tea",
+  "anise_description": "support breastmilk production Light and refreshing taste, easy to enjoy daily.",
   "anise_features": [
-    "Natural ingredients",
-    "Proven effectiveness",
-    "Pleasant taste"
+    "Gentle on the stomach",
+    "Encourages regular fluid intake ",
+    "Smooth aroma ",
+    "Designed for comfort, consistency, and everyday use"
   ],
 
-  "mint_title": "Mint Blend Tea",
-  "mint_description": "A soothing blend to support your breastfeeding journey.",
-  "mint_features": ["Refreshing flavor", "Digestive support", "Caffeine free"],
+  "mint_title": "Mint Flavored Tea",
+  "mint_description": "Supports healthy breast milk production.",
+  "mint_features": [
+    "Leaves a clean, fresh feeling with every cup",
+    "Helps make regular tea intake easier and more enjoyable",
+    "Comforting for digestion"
+  ],
 
-  "fenugreek_title": "Fenugreek Blend Tea",
-  "fenugreek_description": "Traditional herbs combined for maximum effectiveness.",
+  "fenugreek_title": "Mint Fenugreek Free Tea",
+  "fenugreek_description": "Supports healthy breast milk production",
   "fenugreek_features": [
     "Enhanced milk production",
     "Rich in nutrients",
     "Carefully crafted formula"
+  ],
+  "fennel_title": "Fennel Blend Tea",
+  "fennel_description": "Supports healthy breast milk production",
+  "fennel_features": [
+    "Helps ease digestion and reduce bloating after meals",
+    "Soothing and gentle on the stomach",
+    "Encourages relaxation and overall maternal comfort"
   ],
 
   "cookies_title": "Lactation Cookies",

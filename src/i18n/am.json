@@ -59,6 +59,14 @@
   "mint_description": "የጡት ማጥባት ጉዞዎን ለመደገፍ የተዘጋጀ ድብልቅ።",
   "mint_features": ["ቆንጆ ጣዕም", "የምግብ መፈጨት ድጋፍ", "ከካፌይን ነፃ"],
 
+  "fennel_title": "Fennel Blend Tea",
+  "fennel_description": "Supports healthy breast milk production",
+  "fennel_features": [
+    "Helps ease digestion and reduce bloating after meals",
+    "Soothing and gentle on the stomach",
+    "Encourages relaxation and overall maternal comfort"
+  ],
+
   "fenugreek_title": "የአብሽ ድብልቅ ሻይ",
   "fenugreek_description": "በከፍተኛ ደረጃ የወተት ምርት ውጤታማነትን ለመጨመር የተዋሃዱ ባህላዊ ዕፅዋት።",
   "fenugreek_features": ["ለተሻለ የጡት ወተት ምርት", "በንጥረ ነገሮች የበለፀገ", "በጥንቃቄ የተዘጋጀ"],

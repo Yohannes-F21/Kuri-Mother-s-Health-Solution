@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "../i18n";
 import BannerCarousel from "@/components/ProductsPage/BannerCarousel";
-import teaImg from "../Assets/Screenshot 2025-02-07 at 9.20.33 PM.png";
-
-import supplementImg from "../Assets/supplement.png";
+import lemon_tea from "../Assets//WhatsApp Image1.jpeg";
+import mint_tea from "../Assets/WhatsApp Image2.jpeg";
+import fennel_tea from "../Assets/WhatsApp Image 3.jpeg";
 
 interface Product {
   name: string;
@@ -21,35 +21,33 @@ const Products = () => {
     {
       name: t("anise_title"),
       description: t("anise_description"),
-      image: teaImg,
+      image: lemon_tea,
       benefits: t("anise_features", { returnObjects: true }) as string[],
     },
     {
       name: t("mint_title"),
       description: t("mint_description"),
-      image:
-        "https://assets.clevelandclinic.org/transform/11a964aa-8c62-441a-acbd-7b5b49358203/Milk-Supply-Supplements-869682138-967x544-1_jpg",
+      image: mint_tea,
       benefits: t("mint_features", { returnObjects: true }) as string[],
     },
     {
-      name: t("fenugreek_title"),
-      description: t("fenugreek_description"),
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDpWUDiCw3DqxKn_6B6WKsAOh001ymKb5E4Q&s",
-      benefits: t("fenugreek_features", { returnObjects: true }) as string[],
+      name: t("fennel_title"),
+      description: t("fennel_description"),
+      image: fennel_tea,
+      benefits: t("fennel_features", { returnObjects: true }) as string[],
     },
-    {
-      name: t("cookies_title"),
-      description: t("cookies_description"),
-      image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
-      benefits: t("cookies_features", { returnObjects: true }) as string[],
-    },
-    {
-      name: t("supplements_title"),
-      description: t("supplements_description"),
-      image: supplementImg,
-      benefits: t("supplements_features", { returnObjects: true }) as string[],
-    },
+    // {
+    //   name: t("cookies_title"),
+    //   description: t("cookies_description"),
+    //   image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e",
+    //   benefits: t("cookies_features", { returnObjects: true }) as string[],
+    // },
+    // {
+    //   name: t("supplements_title"),
+    //   description: t("supplements_description"),
+    //   image: supplementImg,
+    //   benefits: t("supplements_features", { returnObjects: true }) as string[],
+    // },
   ];
   return (
     <div className="w-full">
@@ -67,7 +65,7 @@ const Products = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-fill"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
